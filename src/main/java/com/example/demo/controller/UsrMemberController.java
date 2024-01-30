@@ -15,6 +15,53 @@ public class UsrMemberController {
 	@Autowired
 	private MemberService memberService;
 
+	private Member loginedMember = null;
+
+	@RequestMapping("/usr/member/doLogin")
+	@ResponseBody
+	public Object doLogin(String loginId, String loginPw) {
+
+		if (loginId == null || loginId.length() == 0 || loginPw == null || loginPw.length() == 0) {
+			return "아이디와 비밀번호를 반드시 입력하시오";
+		}
+
+		boolean loginedMemberCheck = loginedMember == null ? true : false;
+
+		if (loginedMemberCheck != true) {
+			return "이미 로그인 상태입니다";
+		}
+
+		Member member = memberService.getMemberByLoginId(loginId);
+
+		if (member == null) {
+			return "없는 아이디";
+		}
+
+		if (!member.getLoginPw().equals(loginPw)) {
+			return "비밀번호가 틀렷어";
+		}
+
+		loginedMember = member;
+
+		return member.getNickname() + "님 로그인 되었습니다<br>" + loginedMember;
+
+	}
+
+	@RequestMapping("/usr/member/doLogout")
+	@ResponseBody
+	public String doLogout() {
+
+		boolean loginedMemberCheck = loginedMember == null ? true : false;
+
+		if (loginedMemberCheck == true) {
+			return "이미 로그아웃 상태입니다";
+		}
+
+		loginedMember = null;
+
+		return "로그아웃되었습니다";
+	}
+
 	@RequestMapping("/usr/member/doJoin")
 	@ResponseBody
 	public Object doJoin(String loginId, String loginPw, String name, String nickname, String cellphoneNum,
