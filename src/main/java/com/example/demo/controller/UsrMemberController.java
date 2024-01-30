@@ -19,7 +19,7 @@ public class UsrMemberController {
 	@ResponseBody
 	public Object doJoin(String loginId, String loginPw, String name, String nickname, String cellphoneNum,
 			String email) {
-		if (Ut.isNullOrEmpty(loginId)) {
+		if (Ut.isEmpty(loginId)) {
 			return "아이디를 입력해주세요";
 		}
 		if (Ut.isNullOrEmpty(loginPw)) {
