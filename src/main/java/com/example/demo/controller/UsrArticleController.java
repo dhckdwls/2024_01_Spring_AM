@@ -7,14 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.util.UriBuilder;
 
 import com.example.demo.service.ArticleService;
 import com.example.demo.util.Ut;
 import com.example.demo.vo.Article;
 import com.example.demo.vo.ResultData;
 
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -31,15 +30,16 @@ public class UsrArticleController {
 	// 액션 메서드
 
 	@RequestMapping("/usr/article/detail")
-	public String getArticleAction(HttpServletResponse response,Model model,int id) {
+	public String getArticleAction(HttpServletRequest request,Model model,int id) {
 		
 		Article article = articleService.getArticle(id);
 		
 		model.addAttribute("article", article);
 		
 		if (article == null) {
-
-			return "usr/home/main";
+			request.setAttribute("msg", "없는 게시물입니다 확인해주세요");
+	        request.setAttribute("url", "/usr/article/detail?id=1");
+			return "usr/article/alert";
 		}
 		
 		return "usr/article/detail";
