@@ -38,13 +38,13 @@ public class UsrArticleController {
 		
 		if (article == null) {
 			request.setAttribute("msg", "없는 게시물입니다 확인해주세요");
-	        request.setAttribute("url", "/usr/article/detail?id=1");
+	        request.setAttribute("url", "/usr/article/list");
 			return "usr/article/alert";
 		}
 		
 		return "usr/article/detail";
 	}
-
+	//리스트 구성 완료 없는 게시물 처리 완료
 	@RequestMapping("/usr/article/list")
 	public String showList(Model model) {
 		List<Article> articles = articleService.getArticles();
