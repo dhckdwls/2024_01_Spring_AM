@@ -14,5 +14,9 @@ public class Article {
 	private int memberId;
 	private String title;
 	private String body;
+	
+	//inner join 했을때
+	private String Name;
+	private String nickname;
 
 }

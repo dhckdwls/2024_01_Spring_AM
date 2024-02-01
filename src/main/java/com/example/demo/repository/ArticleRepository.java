@@ -27,7 +27,7 @@ public interface ArticleRepository {
 
 //	@Select("SELECT * FROM article WHERE id = #{id}")
 	public Article getArticle(int id);
-
+	
 	@Delete("DELETE FROM article WHERE id = #{id}")
 	public void deleteArticle(int id);
 

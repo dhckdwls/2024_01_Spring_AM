@@ -4,14 +4,17 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.util.UriBuilder;
 
 import com.example.demo.service.ArticleService;
 import com.example.demo.util.Ut;
 import com.example.demo.vo.Article;
 import com.example.demo.vo.ResultData;
 
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -23,26 +26,32 @@ public class UsrArticleController {
 	public UsrArticleController() {
 
 	}
+	
 
 	// 액션 메서드
 
-	@RequestMapping("/usr/article/getArticle")
-	@ResponseBody
-	public ResultData<Article> getArticleAction(int id) {
+	@RequestMapping("/usr/article/detail")
+	public String getArticleAction(HttpServletResponse response,Model model,int id) {
+		
 		Article article = articleService.getArticle(id);
-
+		
+		model.addAttribute("article", article);
+		
 		if (article == null) {
-			return ResultData.from("F-1", Ut.f("%d번 게시물은 존재하지 않습니다", id));
-		}
 
-		return ResultData.from("S-1", Ut.f("%d번 게시물입니다.", id), "article", article);
+			return "usr/home/main";
+		}
+		
+		return "usr/article/detail";
 	}
 
-	@RequestMapping("/usr/article/getArticles")
-	@ResponseBody
-	public ResultData<List<Article>> getArticles() {
+	@RequestMapping("/usr/article/list")
+	public String showList(Model model) {
 		List<Article> articles = articleService.getArticles();
-		return ResultData.from("S-1", "Article List", "List<Article>", articles);
+
+		model.addAttribute("articles", articles);
+
+		return "usr/article/list";
 	}
 
 	@RequestMapping("/usr/article/doWrite")
