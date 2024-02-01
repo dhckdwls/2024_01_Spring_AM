@@ -118,9 +118,9 @@ public class UsrArticleController {
 
 	// 로그인 체크 -> 유무 체크 -> 권한 체크 -> 삭제
 	@RequestMapping("/usr/article/doDelete")
-	@ResponseBody
-	public ResultData<Integer> doDelete(HttpSession httpSession, int id) {
-
+	public String doDelete(HttpServletRequest request,HttpSession httpSession, int id) {
+		
+		//로그인 체크
 		boolean isLogined = false;
 		int loginedMemberId = 0;
 
@@ -130,21 +130,30 @@ public class UsrArticleController {
 		}
 
 		if (isLogined == false) {
-			return ResultData.from("F-A", "로그인 후 이용해주세요");
+			request.setAttribute("msg", "로그인 후 이용해주세요");
+	        request.setAttribute("url", "/usr/article/list");
+			return "/usr/article/alert";
 		}
 		Article article = articleService.getArticle(id);
 
 		if (article == null) {
-			return ResultData.from("F-1", Ut.f("%d번 글은 존재하지 않습니다", id), "id", id);
+			request.setAttribute("msg", id + "번 글은 존재하지 않습니다");
+	        request.setAttribute("url", "/usr/article/list");
+			return "usr/article/alert";
 		}
 
 		if (article.getMemberId() != loginedMemberId) {
-			return ResultData.from("F-2", Ut.f("%d번 글에 대한 권한이 없습니다", id), "id", id);
+			request.setAttribute("msg", id + "번 글에 대한 권한이 없습니다");
+	        request.setAttribute("url", "/usr/article/list");
+			return "usr/article/alert";
 		}
 
 		articleService.deleteArticle(id);
-
-		return ResultData.from("S-1", Ut.f("%d번 글이 삭제 되었습니다", id), "id", id);
+		
+		request.setAttribute("msg", "삭제되었습니다");
+        request.setAttribute("url", "/usr/article/list");
+		
+		return "/usr/article/alert";
 	}
 
 }
