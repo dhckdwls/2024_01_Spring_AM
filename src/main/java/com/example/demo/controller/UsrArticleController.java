@@ -77,26 +77,35 @@ public class UsrArticleController {
 	// 로그인 체크 -> 유무 체크 -> 권한 체크 -> 수정
 	@RequestMapping("/usr/article/doModify")
 	@ResponseBody
-	public ResultData<Integer> doModify(HttpServletRequest req, int id, String title, String body) {
+	public String doModify(Model model, HttpServletRequest req, int id, String title, String body) {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		if (rq.isLogined() == false) {
-			return ResultData.from("F-A", "로그인 후 이용해주세요");
+			return Ut.jsHistoryBack("F-A", "로그인 후 이용해주세요");
 		}
 
 		Article article = articleService.getArticle(id);
 
 		if (article == null) {
-			return ResultData.from("F-1", Ut.f("%d번 글은 존재하지 않습니다", id), "id", id);
+			return Ut.jsHistoryBack("F-1", Ut.f("%d번 글은 존재하지 않습니다", id));
 		}
+
+		model.addAttribute("article", article);
 
 		ResultData loginedMemberCanModifyRd = articleService.userCanModify(rq.getLoginedMemberId(), article);
 
 		if (loginedMemberCanModifyRd.isSuccess()) {
 			articleService.modifyArticle(id, title, body);
+		}else {
+			return Ut.jsReplace("F-2", "수정할 권한이 없습니다.","../article/detail?id="+id);
 		}
 
-		return ResultData.from(loginedMemberCanModifyRd.getResultCode(), loginedMemberCanModifyRd.getMsg(), "id", id);
+		return Ut.jsReplace("S-1", Ut.f("%d번 글이 수정되었습니다", id),"/usr/article/detail?id="+id);
+	}
+
+	@RequestMapping("/usr/article/modify")
+	public String showModify() {
+		return "/usr/article/modify";
 	}
 
 	// 로그인 체크 -> 유무 체크 -> 권한 체크 -> 삭제
