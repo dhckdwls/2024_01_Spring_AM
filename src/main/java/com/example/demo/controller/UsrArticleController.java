@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import com.example.demo.util.Ut;
 import com.example.demo.vo.Article;
 import com.example.demo.vo.ResultData;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -29,14 +31,11 @@ public class UsrArticleController {
 
 	@RequestMapping("/usr/article/detail")
 	public String showDetail(HttpSession httpSession, Model model, int id) {
-		boolean isLogined = false;
-		int loginedMemberId = 0;
-
-		if (httpSession.getAttribute("loginedMemberId") != null) {
-			isLogined = true;
-			loginedMemberId = (int) httpSession.getAttribute("loginedMemberId");
-		}
-
+		
+		
+		Map<String , Object> loginInform = articleService.getLoginInform(httpSession);
+		int loginedMemberId = (int) loginInform.get("loginedMemberId");
+		
 		Article article = articleService.getForPrintArticle(loginedMemberId, id);
 
 		model.addAttribute("article", article);
@@ -57,15 +56,20 @@ public class UsrArticleController {
 	@ResponseBody
 	public ResultData<Article> doWrite(HttpSession httpSession, String title, String body) {
 
-		boolean isLogined = false;
-		int loginedMemberId = 0;
+//		boolean isLogined = false;
+//		int loginedMemberId = 0;
+//
+//		if (httpSession.getAttribute("loginedMemberId") != null) {
+//			isLogined = true;
+//			loginedMemberId = (int) httpSession.getAttribute("loginedMemberId");
+//		}
+		
+		Map<String , Object> loginInform = articleService.getLoginInform(httpSession);
+		boolean isLgoined = (boolean) loginInform.get("islogined");
+		int loginedMemberId = (int) loginInform.get("loginedMemberId");
+		
 
-		if (httpSession.getAttribute("loginedMemberId") != null) {
-			isLogined = true;
-			loginedMemberId = (int) httpSession.getAttribute("loginedMemberId");
-		}
-
-		if (isLogined == false) {
+		if (isLgoined == false) {
 			return ResultData.from("F-A", "로그인 후 이용해주세요");
 		}
 
@@ -90,15 +94,11 @@ public class UsrArticleController {
 	@ResponseBody
 	public ResultData<Integer> doModify(HttpSession httpSession, int id, String title, String body) {
 
-		boolean isLogined = false;
-		int loginedMemberId = 0;
+		Map<String , Object> loginInform = articleService.getLoginInform(httpSession);
+		boolean isLgoined = (boolean) loginInform.get("islogined");
+		int loginedMemberId = (int) loginInform.get("loginedMemberId");
 
-		if (httpSession.getAttribute("loginedMemberId") != null) {
-			isLogined = true;
-			loginedMemberId = (int) httpSession.getAttribute("loginedMemberId");
-		}
-
-		if (isLogined == false) {
+		if (isLgoined == false) {
 			return ResultData.from("F-A", "로그인 후 이용해주세요");
 		}
 
@@ -122,15 +122,11 @@ public class UsrArticleController {
 	@ResponseBody
 	public String doDelete(HttpSession httpSession, int id) {
 
-		boolean isLogined = false;
-		int loginedMemberId = 0;
+		Map<String , Object> loginInform = articleService.getLoginInform(httpSession);
+		boolean isLgoined = (boolean) loginInform.get("islogined");
+		int loginedMemberId = (int) loginInform.get("loginedMemberId");
 
-		if (httpSession.getAttribute("loginedMemberId") != null) {
-			isLogined = true;
-			loginedMemberId = (int) httpSession.getAttribute("loginedMemberId");
-		}
-
-		if (isLogined == false) {
+		if (isLgoined == false) {
 			return Ut.jsReplace("F-A", "로그인 후 이용해주세요", "../member/login");
 		}
 		Article article = articleService.getArticle(id);
