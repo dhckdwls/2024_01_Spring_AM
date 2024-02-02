@@ -1,8 +1,6 @@
 package com.example.demo.service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,8 +9,6 @@ import com.example.demo.repository.ArticleRepository;
 import com.example.demo.util.Ut;
 import com.example.demo.vo.Article;
 import com.example.demo.vo.ResultData;
-
-import jakarta.servlet.http.HttpSession;
 
 @Service
 public class ArticleService {
@@ -84,24 +80,6 @@ public class ArticleService {
 
 	public List<Article> getArticles() {
 		return articleRepository.getArticles();
-	}
-
-	public Map<String ,Object> getLoginInform(HttpSession httpSession) {
-		
-		boolean isLogined = false;
-		int loginedMemberId = 0;
-
-		if (httpSession.getAttribute("loginedMemberId") != null) {
-			isLogined = true;
-			loginedMemberId = (int) httpSession.getAttribute("loginedMemberId");
-		}
-		
-		Map<String ,Object> loginedInform = new HashMap<>();
-		loginedInform.put("isLogined", isLogined);
-		loginedInform.put("loginedMemberId", loginedMemberId);
-		
-		return loginedInform;
-		
 	}
 
 }
