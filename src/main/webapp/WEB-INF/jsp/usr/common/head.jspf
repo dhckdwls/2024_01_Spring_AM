@@ -24,7 +24,7 @@
 			<ul class="flex">
 				<li><a class="hover:underline" href="/">HOME</a></li>
 				<li><a class="hover:underline" href="../article/list">LIST</a></li>
-				<li><a class="hover:underline" href="../member/login">LOGIN</a></li>
+				<li><a class="hover:underline" href="../member/doLogin">LOGIN</a></li>
 			</ul>
 		</div>
 	</header>
