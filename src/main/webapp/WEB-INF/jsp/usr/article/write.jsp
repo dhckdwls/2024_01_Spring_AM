@@ -10,6 +10,11 @@
 			<table class="write-box table-box-1" border="1">
 				<tbody>
 					<tr>
+						<th>작성할 게시판</th>
+						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
+							placeholder="작성할 게시판 번호를 입력해주세요" name="boardId" /></td>
+					</tr>
+					<tr>
 						<th>제목</th>
 						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
 							placeholder="제목을 입력해주세요" name="title" /></td>

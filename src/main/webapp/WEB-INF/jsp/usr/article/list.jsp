@@ -15,6 +15,8 @@
 			</colgroup>
 			<thead>
 				<tr>
+
+					<th>게시판</th>
 					<th>번호</th>
 					<th>날짜</th>
 					<th>제목</th>
@@ -24,12 +26,15 @@
 			<tbody>
 
 				<c:forEach var="article" items="${articles }">
-					<tr class="hover">
-						<td>${article.id }</td>
-						<td>${article.regDate.substring(0,10) }</td>
-						<td><a href="detail?id=${article.id }">${article.title }</a></td>
-						<td>${article.extra__writer }</td>
-					</tr>
+					<c:if test="${board.id == article.boardId }">
+						<tr class="hover">
+							<td>${article.extra__code }</td>
+							<td>${article.id }</td>
+							<td>${article.regDate.substring(0,10) }</td>
+							<td><a href="detail?id=${article.id }">${article.title }</a></td>
+							<td>${article.extra__writer }</td>
+						</tr>
+					</c:if>
 				</c:forEach>
 			</tbody>
 		</table>
