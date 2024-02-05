@@ -26640,3 +26640,21 @@ Unconditional classes:
 2024-02-05 10:31:33 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
 2024-02-05 10:31:33 [DEBUG] o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.rq' via constructor to bean named 'jdk.proxy2.$Proxy107@1d66245c'
 2024-02-05 10:31:33 [DEBUG] o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.rq' via constructor to bean named 'jdk.proxy2.$Proxy108@5f2850f5'
+2024-02-05 10:53:44 [INFO ] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2024-02-05 10:53:44 [DEBUG] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Change set: [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrMemberController.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\static\resource\common.css (MODIFY)]]
+2024-02-05 10:53:44 [DEBUG] o.s.boot.devtools.restart.Restarter - Restarting application
+2024-02-05 10:53:44 [DEBUG] o.s.boot.devtools.restart.Restarter - Stopping application
+2024-02-05 10:53:44 [DEBUG] o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2024-02-05 10:53:44 [DEBUG] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4572058, started on Mon Feb 05 10:31:32 KST 2024
+2024-02-05 10:53:44 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147482623
+2024-02-05 10:53:44 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Bean 'webServerGracefulShutdown' completed its stop procedure
+2024-02-05 10:53:44 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147481599
+2024-02-05 10:53:44 [INFO ] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-02-05 10:53:44 [INFO ] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-02-05 10:53:44 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Bean 'webServerStartStop' completed its stop procedure
+2024-02-05 10:53:44 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase -2147483647
+2024-02-05 10:53:44 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-02-05 10:53:44 [DEBUG] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2024-02-05 10:53:44 [DEBUG] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2024-02-05 10:53:44 [DEBUG] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2024-02-05 10:53:44 [DEBUG] o.s.boot.devtools.restart.Restarter - Starting application com.example.demo.DemoApplication with URLs [file:/C:/work/sts-4.21.0.RELEASE-workspace/demo/target/classes/]
