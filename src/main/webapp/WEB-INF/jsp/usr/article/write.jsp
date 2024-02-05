@@ -10,25 +10,30 @@
 			<table class="write-box table-box-1" border="1">
 				<tbody>
 					<tr>
-						<th>제목 :</th>
-						<td><input autocomplete="off" type="text" placeholder="제목을 입력하세요" name="title" /></td>
+						<th>제목</th>
+						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
+							placeholder="제목을 입력해주세요" name="title" /></td>
 					</tr>
 					<tr>
-						<th>내용 :</th>
-						<td><input autocomplete="off" type="text" placeholder="내용을 입력하세요" name="body" /></td>
+						<th>내용</th>
+						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
+							placeholder="내용을 입력해주세요" name="body" /></td>
 					</tr>
+
+
 					<tr>
 						<th></th>
-						<td><input type="submit" value="작성" /></td>
+						<td><input class="btn btn-outline btn-info" type="submit" value="작성" /></td>
 					</tr>
 				</tbody>
 			</table>
 		</form>
 		<div class="btns">
-			<button class="hover:underline" type="button" onclick="history.back();">뒤로가기</button>
+			<button class="btn btn-outline" class="" type="button" onclick="history.back();">뒤로가기</button>
 		</div>
 	</div>
 </section>
+
 
 
 <%@ include file="../common/foot.jspf"%>
