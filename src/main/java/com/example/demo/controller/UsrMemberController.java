@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -10,9 +9,7 @@ import com.example.demo.service.MemberService;
 import com.example.demo.util.Ut;
 import com.example.demo.vo.Member;
 import com.example.demo.vo.ResultData;
-import com.example.demo.vo.Rq;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -23,17 +20,21 @@ public class UsrMemberController {
 
 	@RequestMapping("/usr/member/doLogout")
 	@ResponseBody
-	public String doLogout(HttpSession httpSession,HttpServletRequest req, Model model) {
-		Rq rq = (Rq) req.getAttribute("rq");
-		
+	public ResultData doLogout(HttpSession httpSession) {
 
-		if (rq.isLogined() == false) {
-			return Ut.jsReplace("F-A", "이미 로그아웃 상태입니다", "/");	
+		boolean isLogined = false;
+
+		if (httpSession.getAttribute("loginedMemberId") != null) {
+			isLogined = true;
+		}
+
+		if (isLogined == false) {
+			return ResultData.from("F-A", "이미 로그아웃 상태입니다");
 		}
 
 		httpSession.removeAttribute("loginedMemberId");
 
-		return Ut.jsReplace("S-1", "로그아웃 되었습니다", "/");
+		return ResultData.from("S-1", Ut.f("로그아웃 되었습니다"));
 	}
 
 	@RequestMapping("/usr/member/login")
