@@ -7,6 +7,13 @@
 <section class="mt-8 text-xl px-4">
 	<div class="mx-auto overflow-x-auto">
 		<div class="badge badge-outline">${articlesCount }개</div>
+		
+		<form class="flex justify-center mt-3" action="../article/list" method="POST">
+		검색 :
+		<input class="btn btn-sm" type="text" placeholder="제목으로 찾기" name="searchKeyword" autocomplete="off"/>
+		<input class="btn btn-sm btn-outline btn-info" type="submit" value="검색" />
+		</form>
+		<br />
 		<table class="table-box-1 table" border="1">
 			<colgroup>
 				<col style="width: 10%" />
