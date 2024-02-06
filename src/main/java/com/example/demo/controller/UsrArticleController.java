@@ -51,29 +51,19 @@ public class UsrArticleController {
 			return rq.historyBackOnView("없는 게시판이야");
 		}
 
+		// 한페이지에 글 10개씩이야
+		// 글 20개 -> 2 page
+		// 글 24개 -> 3 page
 		int itemsInAPage = 10;
-		
+
+		int pagesCount = (int) Math.ceil(articlesCount / (double) itemsInAPage);
 
 		List<Article> articles = articleService.getForPrintArticles(boardId, itemsInAPage, page);
-		model.addAttribute("boardId",boardId);
+
 		model.addAttribute("board", board);
-		model.addAttribute("page", page);
+		model.addAttribute("pagesCount", pagesCount);
 		model.addAttribute("articlesCount", articlesCount);
 		model.addAttribute("articles", articles);
-		
-		
-		//
-		int pageSize = 10;
-		int pageGroup = (int) Math.ceil((double) page / pageSize);
-		int from = ((pageGroup - 1)*pageSize) + 1;
-		int end = pageGroup * pageSize;
-		int totalPage = (int) Math.ceil((double) articlesCount / itemsInAPage);
-		model.addAttribute("pageSize", pageSize);
-		model.addAttribute("pageGroup", pageGroup);
-		model.addAttribute("from", from);
-		model.addAttribute("end", end);
-		model.addAttribute("totalPage", totalPage);
-		
 
 		return "usr/article/list";
 	}
