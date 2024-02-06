@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.ArticleService;
@@ -37,11 +38,17 @@ public class UsrArticleController {
 	// 액션 메서드
 
 	@RequestMapping("/usr/article/list")
-	public String showList(HttpServletRequest req, Model model, int boardId) {
+	public String showList(HttpServletRequest req, Model model, @RequestParam(defaultValue = "1") int boardId) {
+
+		Rq rq = (Rq) req.getAttribute("rq");
 
 		Board board = boardService.getBoardById(boardId);
 
-		List<Article> articles = articleService.getArticles();
+		List<Article> articles = articleService.getForPrintArticles(boardId);
+
+		if (board == null) {
+			return rq.historyBackOnView("없는 게시판이야");
+		}
 
 		model.addAttribute("board", board);
 		model.addAttribute("articles", articles);
@@ -68,13 +75,10 @@ public class UsrArticleController {
 
 	@RequestMapping("/usr/article/doWrite")
 	@ResponseBody
-	public String doWrite(HttpServletRequest req,int boardId, String title, String body) {
+	public String doWrite(HttpServletRequest req, String title, String body) {
 
 		Rq rq = (Rq) req.getAttribute("rq");
 
-		if (boardId != 1 || boardId != 2 || boardId != 3)) {
-			return Ut.jsHistoryBack("F-3", "게시판을 입력해라");
-		}
 		if (Ut.isNullOrEmpty(title)) {
 			return Ut.jsHistoryBack("F-1", "제목을 입력해주세요");
 		}
@@ -82,7 +86,7 @@ public class UsrArticleController {
 			return Ut.jsHistoryBack("F-2", "내용을 입력해주세요");
 		}
 
-		ResultData<Integer> writeArticleRd = articleService.writeArticle(rq.getLoginedMemberId(), boardId,title, body);
+		ResultData<Integer> writeArticleRd = articleService.writeArticle(rq.getLoginedMemberId(), title, body);
 
 		int id = (int) writeArticleRd.getData1();
 
