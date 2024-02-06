@@ -52,12 +52,28 @@ public class UsrArticleController {
 		}
 
 		int itemsInAPage = 10;
+		
 
 		List<Article> articles = articleService.getForPrintArticles(boardId, itemsInAPage, page);
-
+		model.addAttribute("boardId",boardId);
 		model.addAttribute("board", board);
+		model.addAttribute("page", page);
 		model.addAttribute("articlesCount", articlesCount);
 		model.addAttribute("articles", articles);
+		
+		
+		//
+		int pageSize = 10;
+		int pageGroup = (int) Math.ceil((double) page / pageSize);
+		int from = ((pageGroup - 1)*pageSize) + 1;
+		int end = pageGroup * pageSize;
+		int totalPage = (int) Math.ceil((double) articlesCount / itemsInAPage);
+		model.addAttribute("pageSize", pageSize);
+		model.addAttribute("pageGroup", pageGroup);
+		model.addAttribute("from", from);
+		model.addAttribute("end", end);
+		model.addAttribute("totalPage", totalPage);
+		
 
 		return "usr/article/list";
 	}

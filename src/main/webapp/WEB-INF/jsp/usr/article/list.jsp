@@ -37,11 +37,51 @@
 	</div>
 	<div class="pagination flex justify-center mt-3">
 		<div class="btn-group">
-			<c:forEach begin="1" end="20" var="i">
-				<a class="btn btn-sm ${param.page == i ? 'btn-active' : '' }" href="?page=${i }">${i }</a>
+			<%-- <a href="?boardId=${boardId }&page=${(page - 1) < 1 ? 1 : page -1 }">뒤로가기</a> --%>
+			<c:forEach begin="1" end="${articlesCount % 10 == 0 ? (articlesCount / 10) : (articlesCount / 10) + 1 }" var="i">
+				<a class="btn btn-sm ${param.page == i ? 'btn-active' : '' }" href="?boardId=${boardId }&page=${i }">${i }</a>
 			</c:forEach>
 		</div>
 	</div>
+	<br />
+	<div class="pagination flex justify-center mt-3">
+		<c:if test="${Page > 1 }">
+			<a href="?boardId=${boardId }&page=1">◀◀</a>
+		</c:if>
+		<c:if test="${pageGroup * pageSize > totalPage }">
+			<set var="end" value="${totalPage }"></set>
+		</c:if>
+
+		<c:if test="${from < 1 }">
+			<set var="from" value="1"></set>
+		</c:if>
+
+		<c:if test="${end > totalPage }">
+			<set var="end" value="totalPage"></set>
+		</c:if>
+
+		<set var="beforeBtn" value="${page-pageSize }"></set>
+		<c:if test="${beforeBtn < 1 }">
+			<set var="beforeBtn" value="1"></set>
+		</c:if>
+		<a href="?boardId=${boardId }&page=${beforeBtn }">◁</a>
+		
+		<c:forEach begin="${from }" end="${end }" var="i">
+		<a class="btn btn-sm ${param.page == i ? 'btn-active' : '' }" href="?boardId=${boardId }&page=${i }">${i }</a>
+		</c:forEach>
+		
+		<set var="afterBtn" value="${pageGroup*pageSize + 1 }"></set>
+		<c:if test="${afterBtn > totalPage }">
+		<set var="afterBtn" value="${totalPage }"></set>
+		</c:if>
+		<a href="?boardId=${boardId }&page=${afterBtn }">▷</a>
+		
+		<c:if test="${page < totalPage }">
+		<a href="?boardId=${boardId }&page=${totalPage }">▶▶</a>
+		</c:if>
+ 
+	</div>
+
 </section>
 
 
