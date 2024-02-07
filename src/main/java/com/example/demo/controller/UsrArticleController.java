@@ -80,7 +80,12 @@ public class UsrArticleController {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		Article article = articleService.getForPrintArticle(rq.getLoginedMemberId(), id);
-
+		
+		if (article != null) {
+			article.setHit(article.getHit() + 1);
+			
+		}
+		
 		model.addAttribute("article", article);
 
 		return "usr/article/detail";
