@@ -60,17 +60,17 @@ public class UsrArticleController {
 
 		int pagesCount = (int) Math.ceil(articlesCount / (double) itemsInAPage);
 
-		List<Article> articles = articleService.getForPrintArticles(boardId, itemsInAPage, page, searchKeywordTypeCode, searchKeyword);
+		List<Article> articles = articleService.getForPrintArticles(boardId, itemsInAPage, page, searchKeywordTypeCode,
+				searchKeyword);
 
 		model.addAttribute("board", board);
 		model.addAttribute("boardId", boardId);
 		model.addAttribute("page", page);
 		model.addAttribute("pagesCount", pagesCount);
-		model.addAttribute("articlesCount", articlesCount);
-		model.addAttribute("articles", articles);
-		
 		model.addAttribute("searchKeywordTypeCode", searchKeywordTypeCode);
 		model.addAttribute("searchKeyword", searchKeyword);
+		model.addAttribute("articlesCount", articlesCount);
+		model.addAttribute("articles", articles);
 
 		return "usr/article/list";
 	}
@@ -80,12 +80,7 @@ public class UsrArticleController {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		Article article = articleService.getForPrintArticle(rq.getLoginedMemberId(), id);
-		
-		if (article != null) {
-			article.setHit(article.getHit() + 1);
-			
-		}
-		
+
 		model.addAttribute("article", article);
 
 		return "usr/article/detail";

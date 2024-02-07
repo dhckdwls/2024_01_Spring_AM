@@ -13,10 +13,6 @@
 					<td>${article.id }</td>
 				</tr>
 				<tr>
-					<th>조회수</th>
-					<td>${article.hit }</td>
-				</tr>
-				<tr>
 					<th>작성날짜</th>
 					<td>${article.regDate }</td>
 				</tr>
