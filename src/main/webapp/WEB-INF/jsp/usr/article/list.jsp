@@ -12,6 +12,7 @@
 		검색 :
 		<input class="btn btn-sm" type="text" placeholder="제목으로 찾기" name="searchKeyword" autocomplete="off"/>
 		<input class="btn btn-sm btn-outline btn-info" type="submit" value="검색" />
+		
 		</form>
 		<br />
 		<table class="table-box-1 table" border="1">

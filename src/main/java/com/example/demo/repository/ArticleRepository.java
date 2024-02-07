@@ -103,12 +103,10 @@ public interface ArticleRepository {
 			<if test="boardId != 0">
 				AND A.boardId = #{boardId}
 			</if>
-			<if test="searchKeyword != null">
-			AND A.title LIKE '%#{searchKeyword}%'
+			<if test="searchKeyword.length() != 0">
+				AND A.title LIKE CONCAT('%',#{searchKeyword},'%')
 			</if>
-			<if test="searchKeyword == null">
-			AND A.title LIKE '%#제목%'
-			</if>
+			
 			ORDER BY A.id DESC
 			<if test="limitFrom >= 0 ">
 				LIMIT #{limitFrom}, #{limitTake}
