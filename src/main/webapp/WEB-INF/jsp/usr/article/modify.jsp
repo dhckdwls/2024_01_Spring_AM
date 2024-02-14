@@ -41,7 +41,7 @@
 						<td><input class="btn btn-info" type="submit" value="수정" /></td>
 					</tr>
 				</tbody>
-			</table>
+			</table>#
 		</form>
 		<div class="btns">
 			<button class="btn btn-outline" type="button" onclick="history.back();">뒤로가기</button>
