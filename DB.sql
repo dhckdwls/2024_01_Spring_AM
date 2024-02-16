@@ -219,6 +219,48 @@ ON A.id = RP_SUM.relId
 SET A.goodReactionPoint = RP_SUM.goodReactionPoint,
 A.badReactionPoint = RP_SUM.badReactionPoint;
 
+#################################################
+DROP TABLE reply
+# reply 테이블 생성
+CREATE TABLE reply (
+    id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    regDate DATETIME NOT NULL,
+    updateDate DATETIME NOT NULL,
+    memberId INT(10) UNSIGNED NOT NULL,
+    relTypeCode CHAR(50) NOT NULL COMMENT 'Related data type code',
+    relId INT(10) NOT NULL COMMENT 'Related data number',
+    `comment` TEXT NOT NULL
+);
+
+
+
+INSERT INTO reply
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+relTypeCode = 'article',
+relId = 1,
+`comment` = '나쁜글';
+
+SELECT *
+FROM reply
+ORDER BY id DESC
+
+SELECT LAST_INSERT_ID()
+
+
+SELECT A.*, M.nickname AS extra__writer, R.comment AS articleReply
+FROM article AS A
+INNER JOIN `member` AS M
+ON A.memberId = M.id
+INNER JOIN reply AS R
+ON A.id = R.relId AND R.relTypeCode = 'article'
+WHERE A.id = 1
+GROUP BY articleReply
+
+SELECT `comment`
+FROM reply
+WHERE relId = 1 AND relTypeCode = 'article'
 
 ###############################################
 
