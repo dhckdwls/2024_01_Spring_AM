@@ -170,7 +170,7 @@
 </script>
 
 
-<section class="mt-8 text-xl px-4 flex justify-content:flex-start flex-wrap:wrap">
+<section class="mt-8 text-xl px-4">
 	<div class="mx-auto">
 		<table class="table-box-1" border="1">
 			<tbody>
@@ -209,7 +209,9 @@
 				</tr>
 				<tr>
 					<th>조회수</th>
-					<td><span class="article-detail__hit-count">${article.hitCount }</span></td>
+					<td>
+						<span class="article-detail__hit-count">${article.hitCount }</span>
+					</td>
 				</tr>
 				<tr>
 					<th>제목</th>
@@ -233,51 +235,14 @@
 			</c:if>
 		</div>
 	</div>
-	<!-- 댓글 내용 보여주는것 -->
-	<div>
-		<table class="table-box-1" border="1">
-			<thead>
-				<tr>
-					<th>작성자</th>
-					<th>내용</th>
-					<th>수정 및 삭제</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="reply" items="${replys }">
-					<tr>
-						<td>${reply.memberId }</td>
-						<td>${reply.comment }</td>
-						<td><button class="btn btn-outline">
-								<a href="../reply/modify?id=${reply.id}">수정</a>
-							</button>
-							<button class="btn btn-outline">
-								<a href="../reply/doDelete?id=${reply.id }&relId=${reply.relId}">삭제</a>
-							</button></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+</section>
+
+<section class="mt-5 px-3">
+	<div class="mx-auto">
+		<h2>댓글 리스트(${repliesCount })</h2>
+		<div>${replies }</div>
 	</div>
-	<div>
-		<form action="../reply/doWrite" method="POST">
-			<input type="hidden" name="relId" value="${aritlce.id}" /> <input type="hidden" name="boardId"
-				value="${param.boardId }" />
-			<table class="table-box-1" border="1">
-				<tbody>
-					<tr>
-						<th>댓글</th>
-						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-							placeholder="댓글을 입력해주세요" name="comment" /></td>
-					</tr>
-					<tr>
-						<th></th>
-						<td><input class="btn btn-outline btn-info" type="submit" value="작성" /></td>
-					</tr>
-				</tbody>
-			</table>
-		</form>
-	</div>
+
 </section>
 
 

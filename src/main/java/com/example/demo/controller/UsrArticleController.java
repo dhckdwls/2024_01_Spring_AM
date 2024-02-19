@@ -35,11 +35,11 @@ public class UsrArticleController {
 	private BoardService boardService;
 
 	@Autowired
-	private ReactionPointService reactionPointService;
-	
-	@Autowired
 	private ReplyService replyService;
-	
+
+	@Autowired
+	private ReactionPointService reactionPointService;
+
 	public UsrArticleController() {
 
 	}
@@ -61,7 +61,7 @@ public class UsrArticleController {
 		if (board == null) {
 			return rq.historyBackOnView("없는 게시판이야");
 		}
-		
+
 		// 한페이지에 글 10개씩이야
 		// 글 20개 -> 2 page
 		// 글 24개 -> 3 page
@@ -94,12 +94,14 @@ public class UsrArticleController {
 		if (usersReactionRd.isSuccess()) {
 			model.addAttribute("userCanMakeReaction", usersReactionRd.isSuccess());
 		}
-		
-		List<Reply> replys = replyService.getReplys(id);
-		model.addAttribute("replys" , replys ); 
-		
-		
+
+		List<Reply> replies = replyService.getForPrintReplies(rq.getLoginedMemberId(), "article", id);
+
+		int repliesCount = replies.size();
+
 		model.addAttribute("article", article);
+		model.addAttribute("replies", replies);
+		model.addAttribute("repliesCount", repliesCount);
 		model.addAttribute("isAlreadyAddGoodRp",
 				reactionPointService.isAlreadyAddGoodRp(rq.getLoginedMemberId(), id, "article"));
 		model.addAttribute("isAlreadyAddBadRp",
