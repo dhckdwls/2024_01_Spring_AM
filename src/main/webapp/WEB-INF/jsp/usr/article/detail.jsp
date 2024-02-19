@@ -292,12 +292,7 @@
 	<div class="mx-auto">
 		<h2>댓글 리스트(${repliesCount })</h2>
 		<table class="table-box-1 table" border="1">
-			<colgroup>
-				<col style="width: 10%" />
-				<col style="width: 20%" />
-				<col style="width: 60%" />
-				<col style="width: 10%" />
-			</colgroup>
+
 			<thead>
 				<tr>
 					<th>번호</th>
@@ -306,6 +301,8 @@
 					<th>작성자</th>
 					<th>좋아요</th>
 					<th>싫어요</th>
+					<th>수정</th>
+					<th>삭제</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -318,6 +315,8 @@
 						<td>${reply.extra__writer }</td>
 						<td>${reply.goodReactionPoint }</td>
 						<td>${reply.badReactionPoint }</td>
+						<td><a href="/usr/reply/modify?id=${reply.id }&relId=${reply.relId}" class="btn btn-sm btn-outline btn-ghost">수정</a></td>
+						<td><a href="/usr/reply/doDelete?id=${reply.id }&relId=${reply.relId}" class="btn btn-sm btn-outline btn-ghost">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

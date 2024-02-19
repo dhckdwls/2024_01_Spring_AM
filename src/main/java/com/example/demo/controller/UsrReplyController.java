@@ -78,5 +78,12 @@ public class UsrReplyController {
 		return Ut.jsReplace(loginedMemberCanDeleteRd.getResultCode(), loginedMemberCanDeleteRd.getMsg(),
 				"../article/detail?id=" + relId);
 	}
+	
+	@RequestMapping("/usr/reply/modify")
+	public String Modify(HttpServletRequest req) {
+		
+		return "usr/reply/modify";
+	}
+	
 
 }

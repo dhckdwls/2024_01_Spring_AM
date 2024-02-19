@@ -14,6 +14,7 @@ public class Article {
 	private int memberId;
 	private String title;
 	private String body;
+	private int boardId;
 	private int hitCount;
 	private int goodReactionPoint;
 	private int badReactionPoint;
