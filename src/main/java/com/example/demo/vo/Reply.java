@@ -12,13 +12,9 @@ public class Reply {
 	private String regDate;
 	private String updateDate;
 	private int memberId;
-	
-	private int relId;
 	private String relTypeCode;
-	
-	
-	private String comment;
-	
+	private int relId;
+	private String body;
 	private int goodReactionPoint;
 	private int badReactionPoint;
 
