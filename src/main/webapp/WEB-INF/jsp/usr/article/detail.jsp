@@ -233,15 +233,36 @@
 			</c:if>
 		</div>
 	</div>
+	<!-- 댓글 내용 보여주는것 -->
 	<div>
-	<c:forEach var="reply" items="${replys }">
-				<div>${reply.comment }</div>
-			</c:forEach>
+		<table class="table-box-1" border="1">
+			<thead>
+				<tr>
+					<th>작성자</th>
+					<th>내용</th>
+					<th>수정 및 삭제</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="reply" items="${replys }">
+					<tr>
+						<td>${reply.memberId }</td>
+						<td>${reply.comment }</td>
+						<td><button class="btn btn-outline">
+								<a href="../reply/modify?id=${reply.id}">수정</a>
+							</button>
+							<button class="btn btn-outline">
+								<a href="../reply/doDelete?id=${reply.id }&relId=${reply.relId}">삭제</a>
+							</button></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
 	<div>
 		<form action="../reply/doWrite" method="POST">
-			<input type="hidden" name="relId" value="${aritlce.id}" />
-			<input type="hidden" name="boardId" value="${param.boardId }" />
+			<input type="hidden" name="relId" value="${aritlce.id}" /> <input type="hidden" name="boardId"
+				value="${param.boardId }" />
 			<table class="table-box-1" border="1">
 				<tbody>
 					<tr>
