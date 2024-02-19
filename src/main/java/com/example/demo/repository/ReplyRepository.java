@@ -2,6 +2,7 @@ package com.example.demo.repository;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -10,7 +11,7 @@ import com.example.demo.vo.Reply;
 
 @Mapper
 public interface ReplyRepository {
-
+	
 	@Select("""
 				SELECT R.*, M.nickname AS extra__writer
 				FROM reply AS R
@@ -36,4 +37,15 @@ public interface ReplyRepository {
 	@Select("SELECT LAST_INSERT_ID()")
 	public int getLastInsertId();
 
+	@Select("""
+			SELECT *
+			FROM reply
+			WHERE id = #{id}
+			""")
+	public Reply getReply(int id);
+	
+	@Delete("""
+			DELETE FROM reply WHERE id = #{id}
+			""")
+	public void deleteReply(int id);
 }

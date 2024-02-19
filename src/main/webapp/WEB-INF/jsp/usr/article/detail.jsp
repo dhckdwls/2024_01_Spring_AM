@@ -209,9 +209,7 @@
 				</tr>
 				<tr>
 					<th>조회수</th>
-					<td>
-						<span class="article-detail__hit-count">${article.hitCount }</span>
-					</td>
+					<td><span class="article-detail__hit-count">${article.hitCount }</span></td>
 				</tr>
 				<tr>
 					<th>제목</th>
@@ -240,22 +238,17 @@
 <section class="mt-5 px-3">
 	<c:if test="${rq.isLogined() }">
 		<form action="../reply/doWrite" method="POST">
-			<input type="hidden" name="relTypeCode" value="article" />
-			<input type="hidden" name="relId" value="${article.id }" />
+			<input type="hidden" name="relTypeCode" value="article" /> <input type="hidden" name="relId" value="${article.id }" />
 			<table class="write-box table-box-1" border="1">
 				<tbody>
 					<tr>
 						<th>내용</th>
-						<td>
-							<input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="내용을 입력해주세요" name="body" />
-						</td>
+						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
+							placeholder="내용을 입력해주세요" name="body" /></td>
 					</tr>
 					<tr>
 						<th></th>
-						<td>
-							<input class="btn btn-outline btn-info" type="submit" value="댓글 작성" />
-						</td>
+						<td><input class="btn btn-outline btn-info" type="submit" value="댓글 작성" /></td>
 					</tr>
 				</tbody>
 			</table>
@@ -266,7 +259,37 @@
 	</c:if>
 	<div class="mx-auto">
 		<h2>댓글 리스트(${repliesCount })</h2>
-		<div>${replies }</div>
+		<div>
+			<table class="table-box-1 table" border="1">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>날짜</th>
+						<th>작성자</th>
+						<th>내용</th>
+						<th>좋아요</th>
+						<th>싫어요</th>
+						<th>수정</th>
+						<th>삭제</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<c:forEach var="reply" items="${replies }">
+						<tr class="hover">
+							<td>${reply.id }</td>
+							<td>${reply.regDate.substring(0,10) }</td>
+							<td>${reply.extra__writer }</td>
+							<td>${reply.body }</td>
+							<td>${reply.goodReactionPoint }</td>
+							<td>${reply.badReactionPoint }</td>
+							<td><a href="" class="btn btn-outline btn-ghost btn-sm">수정</a></td>
+							<td><a href="/usr/reply/doDelete?id=${reply.id }&relId=${reply.relId}" class="btn btn-outline btn-ghost btn-sm">삭제</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</div>
 
 </section>

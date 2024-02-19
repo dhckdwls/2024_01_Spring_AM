@@ -32,4 +32,23 @@ public class ReplyService {
 		return ResultData.from("S-1", Ut.f("%d번 댓글이 생성되었습니다", id), "id", id);
 	}
 
+	public Reply getReply(int id) {
+		return replyRepository.getReply(id);
+		
+	}
+	
+	public ResultData userCanDelete(int loginedMemberId, Reply reply) {
+
+		if (reply.getMemberId() != loginedMemberId) {
+			return ResultData.from("F-2", "댓글 삭제 권한이 없습니다");
+		}
+
+		return ResultData.from("S-1", "댓글이 삭제되었습니다.");
+	}
+	
+	public void deleteReply(int id) {
+		replyRepository.deleteReply(id);
+		
+	}
+
 }

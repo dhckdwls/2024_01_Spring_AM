@@ -57,5 +57,26 @@ public class UsrReplyController {
 		return Ut.jsReplace(writeReplyRd.getResultCode(), writeReplyRd.getMsg(), "../article/detail?id=" + relId);
 
 	}
+	
+	@RequestMapping("/usr/reply/doDelete")
+	@ResponseBody
+	public String doDelete(HttpServletRequest req, int id,int relId) {
+		Rq rq = (Rq) req.getAttribute("rq");
+
+		Reply reply = replyService.getReply(id);
+
+		if (reply == null) {
+			return Ut.jsHistoryBack("F-1", Ut.f("%d번 글은 존재하지 않습니다", id));
+		}
+
+		ResultData loginedMemberCanDeleteRd = replyService.userCanDelete(rq.getLoginedMemberId(), reply);
+
+		if (loginedMemberCanDeleteRd.isSuccess()) {
+			replyService.deleteReply(id);
+		}
+
+		return Ut.jsReplace(loginedMemberCanDeleteRd.getResultCode(), loginedMemberCanDeleteRd.getMsg(),
+				"../article/detail?id=" + relId);
+	}
 
 }
