@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -57,10 +58,10 @@ public class UsrReplyController {
 		return Ut.jsReplace(writeReplyRd.getResultCode(), writeReplyRd.getMsg(), "../article/detail?id=" + relId);
 
 	}
-	
+
 	@RequestMapping("/usr/reply/doDelete")
 	@ResponseBody
-	public String doDelete(HttpServletRequest req, int id,int relId) {
+	public String doDelete(HttpServletRequest req, int id, int relId) {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		Reply reply = replyService.getReply(id);
@@ -78,12 +79,41 @@ public class UsrReplyController {
 		return Ut.jsReplace(loginedMemberCanDeleteRd.getResultCode(), loginedMemberCanDeleteRd.getMsg(),
 				"../article/detail?id=" + relId);
 	}
-	
+
 	@RequestMapping("/usr/reply/modify")
-	public String Modify(HttpServletRequest req) {
-		
+	public String Modify(HttpServletRequest req, Model model, int id, int relId) {
+		Rq rq = (Rq) req.getAttribute("rq");
+
+		Reply reply = replyService.getReply(id);
+
+		if (reply == null) {
+			return Ut.jsHistoryBack("F-1", Ut.f("%d번 글은 존재하지 않습니다", id));
+		}
+
+		model.addAttribute("reply", reply);
+
 		return "usr/reply/modify";
 	}
 	
+	@RequestMapping("/usr/reply/doModify")
+	@ResponseBody
+	public String doModify(HttpServletRequest req, int id, String body,int relId) {
+		Rq rq = (Rq) req.getAttribute("rq");
+
+		Reply reply = replyService.getReply(id);
+
+		if (reply == null) {
+			return Ut.jsHistoryBack("F-1", Ut.f("%d번 글은 존재하지 않습니다", id));
+		}
+
+		ResultData loginedMemberCanModifyRd = replyService.userCanModify(rq.getLoginedMemberId(), reply);
+
+		if (loginedMemberCanModifyRd.isSuccess()) {
+			replyService.modifyReply(id, body);
+		}
+
+		return Ut.jsReplace(loginedMemberCanModifyRd.getResultCode(), loginedMemberCanModifyRd.getMsg(),
+				"../article/detail?id=" + relId);
+	}
 
 }

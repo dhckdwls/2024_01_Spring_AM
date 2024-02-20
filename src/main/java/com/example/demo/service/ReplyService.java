@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.repository.ReplyRepository;
 import com.example.demo.util.Ut;
+import com.example.demo.vo.Article;
 import com.example.demo.vo.Reply;
 import com.example.demo.vo.ResultData;
 
@@ -48,6 +49,20 @@ public class ReplyService {
 	
 	public void deleteReply(int id) {
 		replyRepository.deleteReply(id);
+		
+	}
+
+	public ResultData userCanModify(int loginedMemberId, Reply reply) {
+
+		if (reply.getMemberId() != loginedMemberId) {
+			return ResultData.from("F-2", Ut.f("%d번 글에 대한 수정 권한이 없습니다", reply.getId()));
+		}
+
+		return ResultData.from("S-1", Ut.f("%d번 글을 수정했습니다", reply.getId()));
+	}
+
+	public void modifyReply(int id, String body) {
+		replyRepository.modifyReply(id, body);
 		
 	}
 
