@@ -52,4 +52,17 @@ public class MemberService {
 		return memberRepository.getMember(id);
 	}
 
+	public ResultData userCanModify(int loginedMemberId, Member member) {
+		if (member.getId() != loginedMemberId) {
+			return ResultData.from("F-2", Ut.f("%d번 글에 대한 수정 권한이 없습니다", member.getId()));
+		}
+
+		return ResultData.from("S-1", Ut.f("%d번 글을 수정했습니다", member.getId()));
+	}
+
+	public void modifyMember(int id, String name, String nickname, String cellphoneNum, String email) {
+		memberRepository.modifyMember(id, name, nickname,cellphoneNum,email);
+		
+	}
+
 }

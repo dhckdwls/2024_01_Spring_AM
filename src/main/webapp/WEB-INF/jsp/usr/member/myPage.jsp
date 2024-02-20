@@ -17,6 +17,7 @@
 				<th>닉네임</th>
 				<th>전화번호</th>
 				<th>email주소</th>
+				<th>회원정보 수정</th>
 				
 
 			</tr>
@@ -32,6 +33,7 @@
 					<td>${member.nickname }</td>
 					<td>${member.cellphoneNum }</td>
 					<td>${member.email }</td>
+					<td><a href="/usr/member/modify?id=${rq.loginedMemberId }" class="btn btn-sm btn-ghost btn-outline">회원정보수정</a></td>
 					
 					
 				</tr>
