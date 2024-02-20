@@ -2,11 +2,13 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.MemberService;
 import com.example.demo.util.Ut;
+import com.example.demo.vo.Article;
 import com.example.demo.vo.Member;
 import com.example.demo.vo.ResultData;
 import com.example.demo.vo.Rq;
@@ -21,6 +23,59 @@ public class UsrMemberController {
 
 	@Autowired
 	private MemberService memberService;
+
+	
+	////////////////////
+	@RequestMapping("/usr/article/modify")
+	public String showModify(HttpServletRequest req, Model model, int id) {
+		Rq rq = (Rq) req.getAttribute("rq");
+
+		Article article = articleService.getForPrintArticle(rq.getLoginedMemberId(), id);
+
+		if (article == null) {
+			return Ut.jsHistoryBack("F-1", Ut.f("%d번 글은 존재하지 않습니다", id));
+		}
+
+		model.addAttribute("article", article);
+
+		return "usr/article/modify";
+	}
+
+	@RequestMapping("/usr/article/doModify")
+	@ResponseBody
+	public String doModify(HttpServletRequest req, int id, String title, String body) {
+		Rq rq = (Rq) req.getAttribute("rq");
+
+		Article article = articleService.getArticle(id);
+
+		if (article == null) {
+			return Ut.jsHistoryBack("F-1", Ut.f("%d번 글은 존재하지 않습니다", id));
+		}
+
+		ResultData loginedMemberCanModifyRd = articleService.userCanModify(rq.getLoginedMemberId(), article);
+
+		if (loginedMemberCanModifyRd.isSuccess()) {
+			articleService.modifyArticle(id, title, body);
+		}
+
+		return Ut.jsReplace(loginedMemberCanModifyRd.getResultCode(), loginedMemberCanModifyRd.getMsg(),
+				"../article/detail?id=" + id);
+	}
+	
+	
+	//////////////////
+	
+	@RequestMapping("/usr/member/myPage")
+	public String showMyPage(HttpServletRequest req, Model model) {
+		Rq rq = (Rq) req.getAttribute("rq");
+		
+		Member member = memberService.getMember(rq.getLoginedMemberId());
+		
+		model.addAttribute("member", member);
+		
+		return "usr/member/myPage";
+	}
+	
 
 	@RequestMapping("/usr/member/doLogout")
 	@ResponseBody
