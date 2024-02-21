@@ -3,7 +3,6 @@ package com.example.demo.repository;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.vo.Member;
 
@@ -19,7 +18,7 @@ public interface MemberRepository {
 	@Select("""
 			SELECT *
 			FROM `member`
-			WHERE name = #{name}
+			WHERE name = #{name} 
 			AND email = #{email}
 			""")
 	public Member getMemberByNameAndEmail(String name, String email);
@@ -43,16 +42,5 @@ public interface MemberRepository {
 
 	@Select("SELECT * FROM `member` WHERE id = #{id}")
 	public Member getMember(int id);
-
-	@Update("""
-			UPDATE `member`
-			SET name = #{name},
-			nickname = #{nickname},
-			cellphoneNum = #{cellphoneNum},
-			email = #{email},
-			updateDate = NOW()
-			WHERE id = #{id}
-				""")
-	public void modifyMember(int id, String name, String nickname, String cellphoneNum, String email);
 
 }

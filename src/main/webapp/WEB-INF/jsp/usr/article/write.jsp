@@ -7,7 +7,6 @@
 <section class="mt-8 text-xl px-4">
 	<div class="mx-auto">
 		<form action="../article/doWrite" method="POST">
-		<input type="hidden" name="boardId" value="${param.boardId }" />
 			<table class="write-box table-box-1" border="1">
 				<tbody>
 					<tr>

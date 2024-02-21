@@ -94,9 +94,8 @@ public class UsrArticleController {
 		if (usersReactionRd.isSuccess()) {
 			model.addAttribute("userCanMakeReaction", usersReactionRd.isSuccess());
 		}
-		
+
 		List<Reply> replies = replyService.getForPrintReplies(rq.getLoginedMemberId(), "article", id);
-		
 
 		int repliesCount = replies.size();
 
@@ -137,7 +136,7 @@ public class UsrArticleController {
 
 	@RequestMapping("/usr/article/doWrite")
 	@ResponseBody
-	public String doWrite(HttpServletRequest req, String title, String body,@RequestParam(defaultValue = "1") int boardId) {
+	public String doWrite(HttpServletRequest req, String title, String body) {
 
 		Rq rq = (Rq) req.getAttribute("rq");
 
@@ -148,7 +147,7 @@ public class UsrArticleController {
 			return Ut.jsHistoryBack("F-2", "내용을 입력해주세요");
 		}
 
-		ResultData<Integer> writeArticleRd = articleService.writeArticle(rq.getLoginedMemberId(), title, body, boardId);
+		ResultData<Integer> writeArticleRd = articleService.writeArticle(rq.getLoginedMemberId(), title, body);
 
 		int id = (int) writeArticleRd.getData1();
 
