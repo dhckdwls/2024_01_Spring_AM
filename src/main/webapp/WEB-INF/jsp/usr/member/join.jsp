@@ -3,21 +3,60 @@
 <c:set var="pageTitle" value="JOIN"></c:set>
 <%@ include file="../common/head.jspf"%>
 
+<script>
+	function a() {
+		var form = document.form;
+
+		var loginId = form.loginId.value;
+
+		var action = "/usr/member/idCheck";
+
+		$.get(action, {
+			loginId : loginId
+
+		}, function(data) {
+			var msg = data;
+			$('.test').text(msg);
+
+		}, 'html');
+
+	}
+	
+	function b() {
+		var form = document.form;
+
+		var loginPw = form.loginPw.value;
+
+		var action = "/usr/member/pwCheck";
+
+		$.get(action, {
+			loginPw : loginPw
+
+		}, function(data) {
+			var msg = data;
+			$('.test1').text(msg);
+
+		}, 'html');
+
+	}
+</script>
 
 <section class="mt-8 text-xl px-4">
 	<div class="mx-auto">
-		<form action="../member/doJoin" method="POST">
+		<form name="form" action="../member/doJoin" method="POST">
 			<table class="join-box table-box-1" border="1">
 				<tbody>
 					<tr>
 						<th>아이디</th>
 						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-							placeholder="아이디를 입력해주세요" name="loginId" /></td>
+							placeholder="아이디를 입력해주세요" name="loginId" oninput="a();" />
+							<div class="test"></div></td>
 					</tr>
 					<tr>
 						<th>비밀번호</th>
 						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-							placeholder="비밀번호를 입력해주세요" name="loginPw" /></td>
+							placeholder="비밀번호를 입력해주세요" name="loginPw" oninput="b();" />
+							<div class="test1"></div></td>
 					</tr>
 					<tr>
 						<th>이름</th>

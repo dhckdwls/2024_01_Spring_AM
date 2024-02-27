@@ -23,7 +23,7 @@ public class UsrAjaxTestController {
 		int rs = num1 + num2;
 		return rs + "/" + msg + "/S-1";
 	}
-
+	
 	@RequestMapping("/usr/home/doPlusJson")
 	@ResponseBody
 	public Map doPlusJson(int num1, int num2) {

@@ -53,7 +53,7 @@
 
 		var num1 = form.num1.value;
 		var num2 = form.num2.value;
-		var action = form.action;
+		var action = form.action;A
 
 		$.get(action, {
 			num1 : num1,
