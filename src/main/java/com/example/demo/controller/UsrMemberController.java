@@ -1,10 +1,7 @@
 package com.example.demo.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -88,61 +85,11 @@ public class UsrMemberController {
 	}
 
 	@RequestMapping("/usr/member/join")
-	public String showJoin(HttpServletRequest req, Model model) {
+	public String showJoin(HttpServletRequest req) {
+
 		return "usr/member/join";
 	}
-//
-	@RequestMapping("/usr/member/idCheck")
-	@ResponseBody
-	public String idCheck(HttpServletRequest req, String loginId) {
-		List<Member> members = memberService.getMembers();
-		
-		for (Member member : members) {
-			if (member.getLoginId().equals(loginId)) {
-				String a = "중복된 아이디";
-				return a;
-			}
-			
-		}
-		if (Ut.isEmpty(loginId)) {
-			String c = "필수 입력 정보";
-			return c;
-		}
-		String b = "사용가능한 아이디";
-		return b;
-	}
-	
-	@RequestMapping("/usr/member/pwCheck")
-	@ResponseBody
-	public String pwCheck(HttpServletRequest req, String loginPw) {
-					
-		if (Ut.isEmpty(loginPw)) {
-			String c = "필수 입력 정보";
-			return c;
-		}
-		
-		if (loginPw.length() < 9) {
-			return "9글자 이상";
-		}
-		
-		if (passwordLogic(loginPw) == false) {
-			String a = "특수문자 필요";
-			return a;
-		}
-		
-		
-		String b = "사용가능한 비밀번호";
-		return b;
-	}
 
-	public boolean passwordLogic(String loginPw) {
-		if (loginPw.contains("!") || loginPw.contains("@") || loginPw.contains("#") || loginPw.contains("$") || loginPw.contains("%") || loginPw.contains("^") || loginPw.contains("&") || loginPw.contains("*")) {
-			return true;
-		}
-		return false;
-	}
-	
-//	
 	@RequestMapping("/usr/member/doJoin")
 	@ResponseBody
 	public String doJoin(HttpServletRequest req, String loginId, String loginPw, String name, String nickname,
@@ -181,5 +128,17 @@ public class UsrMemberController {
 		Member member = memberService.getMember(joinRd.getData1());
 
 		return Ut.jsReplace(joinRd.getResultCode(), joinRd.getMsg(), "../member/login");
+	}
+
+	@RequestMapping("/usr/member/myPage")
+	public String showMyPage() {
+
+		return "usr/member/myPage";
+	}
+
+	@RequestMapping("/usr/member/checkPw")
+	public String showCheckPw() {
+
+		return "usr/member/checkPw";
 	}
 }
