@@ -24,8 +24,18 @@
 		console.log("data", data);
 	}
 	
-	getData2();
+	 getData2();
 	
+	async function getData3() {
+		const API_KEY = '7gBxrsj7WSHvOZjYdEQXGXuT9pq9L8NMGDZ9hzG7VnyftpPH7IIKkWxq2HkS94X9AsKLEzXCkaOZeH94lv28Bg%3D%3D';
+		const url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=' + API_KEY + '&numOfRows=10&pageNo=1&base_date=20210628&base_time=0500&nx=55&ny=127';
+		const response = await fetch(url);
+		const data = await response.json();
+		console.log("data", data);
+	}
+	
+	getData3(); 
+
 	
 </script>
 
