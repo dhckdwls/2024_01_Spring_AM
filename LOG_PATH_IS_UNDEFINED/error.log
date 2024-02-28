@@ -1,8 +1,8 @@
-2024-02-27 11:27:33 [ERROR] o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usrMemberController' method 
-com.example.demo.controller.UsrMemberController#idCheck(HttpServletRequest, String)
-to { [/usr/member/idCheck]}: There is already 'usrMemberController' bean method
-com.example.demo.controller.UsrMemberController#pwCheck(HttpServletRequest, String) mapped.
+2024-02-28 09:10:20 [ERROR] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usrHomeController' method 
+com.example.demo.controller.UsrHomeController#showRoot()
+to { [/]}: There is already 'usrAPITestController' bean method
+com.example.demo.controller.UsrAPITestController#showRoot() mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1768)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
@@ -25,10 +25,10 @@ com.example.demo.controller.UsrMemberController#pwCheck(HttpServletRequest, Stri
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'usrMemberController' method 
-com.example.demo.controller.UsrMemberController#idCheck(HttpServletRequest, String)
-to { [/usr/member/idCheck]}: There is already 'usrMemberController' bean method
-com.example.demo.controller.UsrMemberController#pwCheck(HttpServletRequest, String) mapped.
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'usrHomeController' method 
+com.example.demo.controller.UsrHomeController#showRoot()
+to { [/]}: There is already 'usrAPITestController' bean method
+com.example.demo.controller.UsrAPITestController#showRoot() mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:634)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)

@@ -4,41 +4,51 @@
 <%@ include file="../common/head.jspf"%>
 
 <script>
-	function a() {
-		var form = document.form;
-
-		var loginId = form.loginId.value;
-
-		var action = "/usr/member/idCheck";
-
-		$.get(action, {
-			loginId : loginId
-
-		}, function(data) {
-			var msg = data;
-			$('.test').text(msg);
-
-		}, 'html');
-
-	}
+/* 아이디체크 */
+function a() {
+	$('.idCheck').css('display','block');
 	
-	function b() {
-		var form = document.form;
+	var form = document.form;
 
-		var loginPw = form.loginPw.value;
+	var loginId = form.loginId.value;
+	var action = "/usr/member/idCheck";
 
-		var action = "/usr/member/pwCheck";
+	$.get(action, {
+		loginId : loginId
+	}, function(data) {
+		$('.idCheck').text(data);
+	}, 'html');
 
-		$.get(action, {
-			loginPw : loginPw
+}
+/* 이름체크 */
+function nameCheck() {
+	$('.nameCheck').css('display','block');
+	var form = document.form;
+	var name = form.name.value;
+	var action = "/usr/member/nameCheck";
+	
+	$.get(action,{
+		name : name
+	}, function(data){
+		$('.nameCheck').text(data);
+	},'html')
+}
 
-		}, function(data) {
-			var msg = data;
-			$('.test1').text(msg);
+/* email체크 */
+function emailCheck() {
+	$('.emailCheck').css('display','block');
+	var form = document.form;
+	var email = form.email.value;
+	var action = "/usr/member/emailCheck";
+	
+	$.get(action,{
+		email : email
+	}, function(data){
+		$('.nameCheck').text(data);
+	},'html')
+}
 
-		}, 'html');
 
-	}
 </script>
 
 <section class="mt-8 text-xl px-4">
@@ -49,19 +59,19 @@
 					<tr>
 						<th>아이디</th>
 						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-							placeholder="아이디를 입력해주세요" name="loginId" oninput="a();" />
-							<div class="test"></div></td>
+							placeholder="아이디를 입력해주세요" name="loginId" oninput="a()"/>
+							<div class="idCheck" style="display:none"></div></td>
 					</tr>
 					<tr>
 						<th>비밀번호</th>
 						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-							placeholder="비밀번호를 입력해주세요" name="loginPw" oninput="b();" />
-							<div class="test1"></div></td>
+							placeholder="비밀번호를 입력해주세요" name="loginPw" /></td>
 					</tr>
 					<tr>
 						<th>이름</th>
 						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-							placeholder="이름을 입력해주세요" name="name" /></td>
+							placeholder="이름을 입력해주세요" name="name" oninput="nameCheck();"/>
+							<div class="nameCheck" style="display:none;"></div></td>
 					</tr>
 					<tr>
 						<th>닉네임</th>
@@ -76,7 +86,8 @@
 					<tr>
 						<th>이메일</th>
 						<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-							placeholder="이메일을 입력해주세요" name="email" /></td>
+							placeholder="이메일을 입력해주세요" name="email" />
+							<div class="emailCheck" style="display:none;"></div></td>
 					</tr>
 
 					<tr>

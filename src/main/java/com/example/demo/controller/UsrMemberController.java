@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -89,6 +91,43 @@ public class UsrMemberController {
 
 		return "usr/member/join";
 	}
+	
+//	
+	@RequestMapping("/usr/member/idCheck")
+	@ResponseBody
+	public String idCheck(HttpServletRequest req, String loginId) {
+		if(loginId.trim().length() == 0) {
+			return "필수입력정보";
+		}
+		
+		Member member = memberService.getMemberByLoginId(loginId);
+		
+		if(member != null) {
+			return "중복된 아이디";
+		}
+		return "사용가능";
+	}
+	
+	@RequestMapping("/usr/member/nameCheck")
+	@ResponseBody
+	public String nameCheck(HttpServletRequest req, String name) {
+		if(name.trim().length() == 0) {
+			return "필수입력정보";
+		}
+		return "확인";
+	}
+	
+	@RequestMapping("/usr/member/emailCheck")
+	@ResponseBody
+	public String emailCheck(HttpServletRequest req, String email) {
+		if(email.trim().length() == 0) {
+			return "필수입력정보";
+		}
+		List<Member> members = memberService.getForCheckMemberByEmail(email);
+		
+		return "확인";
+	}
+//	
 
 	@RequestMapping("/usr/member/doJoin")
 	@ResponseBody

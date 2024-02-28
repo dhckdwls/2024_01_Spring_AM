@@ -54,8 +54,8 @@ public class MemberService {
 		return memberRepository.getMember(id);
 	}
 
-	public List<Member> getMembers() {
-		return memberRepository.getMembers();
+	public List<Member> getForCheckMemberByEmail(String email) {
+		return memberRepository.getForCheckMemberByEmail(email);
 	}
 
 }
