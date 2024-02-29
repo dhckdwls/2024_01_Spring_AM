@@ -17,4 +17,41 @@ public class UsrHomeController {
 
 		return "redirect:/usr/home/main";
 	}
+	
+//	 테스트용
+	@RequestMapping("/usr/home/testmain")
+	public String testmain() {
+
+		return "/usr/home/testmain";
+	}
+	
+	@RequestMapping("/usr/home/testlogin")
+	public String testlogin() {
+
+		return "/usr/home/testlogin";
+	}
+	
+	@RequestMapping("/usr/home/testjoin")
+	public String testjoin() {
+
+		return "/usr/home/testjoin";
+	}
+	
+	@RequestMapping("/usr/home/testdetail")
+	public String testdetail() {
+
+		return "/usr/home/testdetail";
+	}
+	
+	@RequestMapping("/usr/home/testlist")
+	public String testlist() {
+
+		return "/usr/home/testlist";
+	}
+	
+	@RequestMapping("/usr/home/testtest")
+	public String testtest() {
+
+		return "/usr/home/testtest";
+	}
 }
