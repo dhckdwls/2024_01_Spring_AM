@@ -90,3 +90,918 @@ com.example.demo.controller.ProjectTestController#showRoot() mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1815)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1764)
 	... 21 common frames omitted
+2024-02-28 17:16:21 [ERROR] o.a.c.c.C.[.[localhost].[/].[jsp] - Servlet.service() for servlet [jsp] threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Cannot use 'var' on variable without initializer
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token "(", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ")", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+URL cannot be resolved to a type
+20:                 prompt, maxTokens, temperature, topP, n);
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+
+
+An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+URL cannot be resolved to a type
+20:                 prompt, maxTokens, temperature, topP, n);
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+
+
+An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+HttpURLConnection cannot be resolved to a type
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+27:         connection.setRequestMethod("POST");
+
+
+An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+HttpURLConnection cannot be resolved to a type
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+27:         connection.setRequestMethod("POST");
+
+
+An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+DataOutputStream cannot be resolved to a type
+32: 
+33:         // 출력 스트림을 통해 요청 본문 데이터 전송
+34:         connection.setDoOutput(true);
+35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
+36:         wr.writeBytes(requestBody);
+37:         wr.flush();
+38:         wr.close();
+
+
+An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+DataOutputStream cannot be resolved to a type
+32: 
+33:         // 출력 스트림을 통해 요청 본문 데이터 전송
+34:         connection.setDoOutput(true);
+35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
+36:         wr.writeBytes(requestBody);
+37:         wr.flush();
+38:         wr.close();
+
+
+An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+BufferedReader cannot be resolved to a type
+42:         System.out.println("Response Code: " + responseCode);
+43: 
+44:         // 응답 본문 읽기
+45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+46:         String inputLine;
+47:         StringBuffer responseBuffer = new StringBuffer();
+48: 
+
+
+An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+BufferedReader cannot be resolved to a type
+42:         System.out.println("Response Code: " + responseCode);
+43: 
+44:         // 응답 본문 읽기
+45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+46:         String inputLine;
+47:         StringBuffer responseBuffer = new StringBuffer();
+48: 
+
+
+An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+InputStreamReader cannot be resolved to a type
+42:         System.out.println("Response Code: " + responseCode);
+43: 
+44:         // 응답 본문 읽기
+45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+46:         String inputLine;
+47:         StringBuffer responseBuffer = new StringBuffer();
+48: 
+
+
+An error occurred at line: [55] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Duplicate local variable response
+52:         in.close();
+53: 
+54:         // 응답 출력
+55:         String response = responseBuffer.toString();
+56:         System.out.println("Response: " + response);
+57: 
+58:         return response;
+
+
+An error occurred at line: [58] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Void methods cannot return a value
+55:         String response = responseBuffer.toString();
+56:         System.out.println("Response: " + response);
+57: 
+58:         return response;
+59: 
+60:     } catch (Exception e) {
+61:         e.printStackTrace();
+
+
+An error occurred at line: [62] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Void methods cannot return a value
+59: 
+60:     } catch (Exception e) {
+61:         e.printStackTrace();
+62:         return null;
+63:     }
+64: }
+65: 
+
+
+An error occurred at line: [67] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Duplicate local variable prompt
+64: }
+65: 
+66: // KoGPT에게 전달할 명령어 구성
+67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
+68: 
+69: // 함수 호출
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+
+
+An error occurred at line: [70] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+The method kogptApi(String, int, double, double, int) is undefined for the type APITest1_jsp
+67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
+68: 
+69: // 함수 호출
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+71: 
+72: // JSON 형식의 응답 데이터를 파싱
+73: JSONObject jsonResponse = new JSONObject(responseJson);
+
+
+An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+JSONObject cannot be resolved to a type
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+71: 
+72: // JSON 형식의 응답 데이터를 파싱
+73: JSONObject jsonResponse = new JSONObject(responseJson);
+74: 
+75: // 파싱한 데이터를 활용하여 필요한 작업 수행
+76: String generatedText = jsonResponse.getString("generated_text");
+
+
+An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+JSONObject cannot be resolved to a type
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+71: 
+72: // JSON 형식의 응답 데이터를 파싱
+73: JSONObject jsonResponse = new JSONObject(responseJson);
+74: 
+75: // 파싱한 데이터를 활용하여 필요한 작업 수행
+76: String generatedText = jsonResponse.getString("generated_text");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:513)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:408)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:314)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1415)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1159)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-02-28 17:16:21 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Cannot use 'var' on variable without initializer
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token "(", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ")", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+URL cannot be resolved to a type
+20:                 prompt, maxTokens, temperature, topP, n);
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+
+
+An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+URL cannot be resolved to a type
+20:                 prompt, maxTokens, temperature, topP, n);
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+
+
+An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+HttpURLConnection cannot be resolved to a type
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+27:         connection.setRequestMethod("POST");
+
+
+An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+HttpURLConnection cannot be resolved to a type
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+27:         connection.setRequestMethod("POST");
+
+
+An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+DataOutputStream cannot be resolved to a type
+32: 
+33:         // 출력 스트림을 통해 요청 본문 데이터 전송
+34:         connection.setDoOutput(true);
+35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
+36:         wr.writeBytes(requestBody);
+37:         wr.flush();
+38:         wr.close();
+
+
+An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+DataOutputStream cannot be resolved to a type
+32: 
+33:         // 출력 스트림을 통해 요청 본문 데이터 전송
+34:         connection.setDoOutput(true);
+35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
+36:         wr.writeBytes(requestBody);
+37:         wr.flush();
+38:         wr.close();
+
+
+An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+BufferedReader cannot be resolved to a type
+42:         System.out.println("Response Code: " + responseCode);
+43: 
+44:         // 응답 본문 읽기
+45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+46:         String inputLine;
+47:         StringBuffer responseBuffer = new StringBuffer();
+48: 
+
+
+An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+BufferedReader cannot be resolved to a type
+42:         System.out.println("Response Code: " + responseCode);
+43: 
+44:         // 응답 본문 읽기
+45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+46:         String inputLine;
+47:         StringBuffer responseBuffer = new StringBuffer();
+48: 
+
+
+An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+InputStreamReader cannot be resolved to a type
+42:         System.out.println("Response Code: " + responseCode);
+43: 
+44:         // 응답 본문 읽기
+45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+46:         String inputLine;
+47:         StringBuffer responseBuffer = new StringBuffer();
+48: 
+
+
+An error occurred at line: [55] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Duplicate local variable response
+52:         in.close();
+53: 
+54:         // 응답 출력
+55:         String response = responseBuffer.toString();
+56:         System.out.println("Response: " + response);
+57: 
+58:         return response;
+
+
+An error occurred at line: [58] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Void methods cannot return a value
+55:         String response = responseBuffer.toString();
+56:         System.out.println("Response: " + response);
+57: 
+58:         return response;
+59: 
+60:     } catch (Exception e) {
+61:         e.printStackTrace();
+
+
+An error occurred at line: [62] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Void methods cannot return a value
+59: 
+60:     } catch (Exception e) {
+61:         e.printStackTrace();
+62:         return null;
+63:     }
+64: }
+65: 
+
+
+An error occurred at line: [67] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Duplicate local variable prompt
+64: }
+65: 
+66: // KoGPT에게 전달할 명령어 구성
+67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
+68: 
+69: // 함수 호출
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+
+
+An error occurred at line: [70] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+The method kogptApi(String, int, double, double, int) is undefined for the type APITest1_jsp
+67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
+68: 
+69: // 함수 호출
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+71: 
+72: // JSON 형식의 응답 데이터를 파싱
+73: JSONObject jsonResponse = new JSONObject(responseJson);
+
+
+An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+JSONObject cannot be resolved to a type
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+71: 
+72: // JSON 형식의 응답 데이터를 파싱
+73: JSONObject jsonResponse = new JSONObject(responseJson);
+74: 
+75: // 파싱한 데이터를 활용하여 필요한 작업 수행
+76: String generatedText = jsonResponse.getString("generated_text");
+
+
+An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+JSONObject cannot be resolved to a type
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+71: 
+72: // JSON 형식의 응답 데이터를 파싱
+73: JSONObject jsonResponse = new JSONObject(responseJson);
+74: 
+75: // 파싱한 데이터를 활용하여 필요한 작업 수행
+76: String generatedText = jsonResponse.getString("generated_text");
+
+
+Stacktrace:] with root cause
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Cannot use 'var' on variable without initializer
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token "(", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ",", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Syntax error on token ")", ; expected
+9: <%
+10: // KoGPT API 호출을 위한 메서드 선언
+11: // 각 파라미터 기본값으로 설정
+12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
+13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
+14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
+15: 
+
+
+An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+URL cannot be resolved to a type
+20:                 prompt, maxTokens, temperature, topP, n);
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+
+
+An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+URL cannot be resolved to a type
+20:                 prompt, maxTokens, temperature, topP, n);
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+
+
+An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+HttpURLConnection cannot be resolved to a type
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+27:         connection.setRequestMethod("POST");
+
+
+An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+HttpURLConnection cannot be resolved to a type
+21: 
+22:         // URL 설정
+23:         URL url = new URL(apiUrl);
+24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+25: 
+26:         // 요청 메서드 설정
+27:         connection.setRequestMethod("POST");
+
+
+An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+DataOutputStream cannot be resolved to a type
+32: 
+33:         // 출력 스트림을 통해 요청 본문 데이터 전송
+34:         connection.setDoOutput(true);
+35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
+36:         wr.writeBytes(requestBody);
+37:         wr.flush();
+38:         wr.close();
+
+
+An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+DataOutputStream cannot be resolved to a type
+32: 
+33:         // 출력 스트림을 통해 요청 본문 데이터 전송
+34:         connection.setDoOutput(true);
+35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
+36:         wr.writeBytes(requestBody);
+37:         wr.flush();
+38:         wr.close();
+
+
+An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+BufferedReader cannot be resolved to a type
+42:         System.out.println("Response Code: " + responseCode);
+43: 
+44:         // 응답 본문 읽기
+45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+46:         String inputLine;
+47:         StringBuffer responseBuffer = new StringBuffer();
+48: 
+
+
+An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+BufferedReader cannot be resolved to a type
+42:         System.out.println("Response Code: " + responseCode);
+43: 
+44:         // 응답 본문 읽기
+45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+46:         String inputLine;
+47:         StringBuffer responseBuffer = new StringBuffer();
+48: 
+
+
+An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+InputStreamReader cannot be resolved to a type
+42:         System.out.println("Response Code: " + responseCode);
+43: 
+44:         // 응답 본문 읽기
+45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+46:         String inputLine;
+47:         StringBuffer responseBuffer = new StringBuffer();
+48: 
+
+
+An error occurred at line: [55] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Duplicate local variable response
+52:         in.close();
+53: 
+54:         // 응답 출력
+55:         String response = responseBuffer.toString();
+56:         System.out.println("Response: " + response);
+57: 
+58:         return response;
+
+
+An error occurred at line: [58] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Void methods cannot return a value
+55:         String response = responseBuffer.toString();
+56:         System.out.println("Response: " + response);
+57: 
+58:         return response;
+59: 
+60:     } catch (Exception e) {
+61:         e.printStackTrace();
+
+
+An error occurred at line: [62] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Void methods cannot return a value
+59: 
+60:     } catch (Exception e) {
+61:         e.printStackTrace();
+62:         return null;
+63:     }
+64: }
+65: 
+
+
+An error occurred at line: [67] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+Duplicate local variable prompt
+64: }
+65: 
+66: // KoGPT에게 전달할 명령어 구성
+67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
+68: 
+69: // 함수 호출
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+
+
+An error occurred at line: [70] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+The method kogptApi(String, int, double, double, int) is undefined for the type APITest1_jsp
+67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
+68: 
+69: // 함수 호출
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+71: 
+72: // JSON 형식의 응답 데이터를 파싱
+73: JSONObject jsonResponse = new JSONObject(responseJson);
+
+
+An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+JSONObject cannot be resolved to a type
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+71: 
+72: // JSON 형식의 응답 데이터를 파싱
+73: JSONObject jsonResponse = new JSONObject(responseJson);
+74: 
+75: // 파싱한 데이터를 활용하여 필요한 작업 수행
+76: String generatedText = jsonResponse.getString("generated_text");
+
+
+An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
+JSONObject cannot be resolved to a type
+70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
+71: 
+72: // JSON 형식의 응답 데이터를 파싱
+73: JSONObject jsonResponse = new JSONObject(responseJson);
+74: 
+75: // 파싱한 데이터를 활용하여 필요한 작업 수행
+76: String generatedText = jsonResponse.getString("generated_text");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:513)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:408)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:314)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1415)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1159)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
