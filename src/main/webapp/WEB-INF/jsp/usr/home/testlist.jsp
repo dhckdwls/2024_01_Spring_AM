@@ -127,7 +127,7 @@ a {
 		<div class="header flex items-center">
 			<div class="top_left">
 				<div>
-					<a href="#">RANDOM TRIP (로고)</a>
+					<a href="#">사이트 (로고)</a>
 				</div>
 			</div>
 			<div class="top_right">
@@ -153,7 +153,7 @@ a {
 			</nav>
 			<main>
 				
-
+			테스트테스트를 보시오
 			</main>
 			<aside>달력이랑 날씨 넣을 자리</aside>
 		</section>

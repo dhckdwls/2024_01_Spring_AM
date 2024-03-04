@@ -29,24 +29,21 @@
 	box-sizing: border-box;
 }
 
-.main {
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
 h1 {
 	font-size: 24px;
 	font-weight: 400;
 	text-align: center;
 }
 
+/* 사진 */
 img {
 	height: auto;
 	max-width: 100%;
 	vertical-align: middle;
 }
 
-.btn {
+/* 사진아래더보기버튼 */
+.btn1 {
 	color: #ffffff;
 	padding: 0.8rem;
 	font-size: 14px;
@@ -60,7 +57,8 @@ img {
 	background: transparent;
 }
 
-.btn:hover {
+/* 더보기 버튼 호버 했을때 */
+.btn1:hover {
 	background-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -96,12 +94,12 @@ img {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	border: 2px solid black;
 }
 
 .card_content {
 	padding: 1rem;
 	background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
-	border: 2px solid red;
 }
 
 .card_title {
@@ -119,6 +117,10 @@ img {
 	line-height: 1.5;
 	margin-bottom: 1.25rem;
 	font-weight: 400;
+}
+
+.pageBtn>.btn {
+	display: inline-block;
 }
 </style>
 
@@ -140,8 +142,9 @@ a {
 .container {
 	display: flex;
 	flex-direction: column;
-	min-width: 100vw;
+	min-width: 100%;/* 가로 스크롤 생기는거 방지 */
 	min-height: 100vh;
+	
 }
 
 /* 상단 */
@@ -152,7 +155,7 @@ a {
 
 .header {
 	justify-content: space-between;
-	border: 2px solid red;
+	/* border: 2px solid red; */
 }
 
 .top_left>div {
@@ -191,8 +194,8 @@ a {
 /* 중단 왼편 */
 .container>.content>nav {
 	background-color: #aed6f1;
-	flex-basis: 150px;
-	/*   flex-shrink: 0; */
+	flex-basis: 150xp;
+	flex-shrink: 0;
 	min-width: 10%;
 	border: 2px solid red;
 }
@@ -201,7 +204,7 @@ a {
 .container>.content>main {
 	background-color: #aed6f1;
 	flex-grow: 1;
-	/*   flex-shrink: 1; */
+	flex-shrink: 1;
 	border: 2px solid red;
 	display: flex;
 	justify-content: center;
@@ -211,7 +214,7 @@ a {
 /* 중단 오른편 */
 .container>.content>aside {
 	flex-basis: 120px;
-	/*   flex-shrink: 0; */
+	flex-shrink: 0;
 	background-color: #aed6f1;
 	min-width: 10%;
 	border: 2px solid red;
@@ -231,7 +234,7 @@ a {
 		<div class="header flex items-center">
 			<div class="top_left">
 				<div>
-					<a href="#">RANDOM TRIP (로고)</a>
+					<a href="#">사이트 (로고)</a>
 				</div>
 			</div>
 			<div class="top_right">
@@ -256,82 +259,165 @@ a {
 				</ul>
 			</nav>
 			<main class="flex flex-col">
-				<div><h1>여행지</h1></div>
-				<div><ul class="cards">
-					<li class="cards_item">
-						<div class="card">
-							<div class="card_image">
-								<img src="https://picsum.photos/500/300/?image=10">
-							</div>
-							<div class="card_content">
-								<h2 class="card_title">서울</h2>
-								<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-								<button class="btn card_btn">더보기</button>
-							</div>
+			<h1>여행지</h1>
+				<div>
+					<div class="mx-auto overflow-x-auto">
+						<div class="mb-4 flex">
+							<div class="badge badge-outline">${articlesCount }개</div>
+							<div class="flex-grow"></div>
+							<form action="">
+								<input type="hidden" name="boardId" value="${param.boardId }" /> <select
+									data-value="${param.searchKeywordTypeCode }" class="select select-bordered select-sm w-full max-w-xs"
+									name="searchKeywordTypeCode">
+									<option value="title">제목</option>
+									<option value="body">내용</option>
+									<option value="title,body">제목+내용</option>
+								</select> <input value="${param.searchKeyword }" name="searchKeyword" type="text" placeholder="searchKeyword?"
+									class="input-sm input input-bordered w-48 max-w-xs" />
+								<button class="btn btn-sm" type="submit">검색</button>
+							</form>
 						</div>
-					</li>
-					<li class="cards_item">
-						<div class="card">
-							<div class="card_image">
-								<img src="https://picsum.photos/500/300/?image=10">
-							</div>
-							<div class="card_content">
-								<h2 class="card_title">서울</h2>
-								<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-								<button class="btn card_btn">더보기</button>
-							</div>
-						</div>
-					</li>
-					<li class="cards_item">
-						<div class="card">
-							<div class="card_image">
-								<img src="https://picsum.photos/500/300/?image=10">
-							</div>
-							<div class="card_content">
-								<h2 class="card_title">서울</h2>
-								<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-								<button class="btn card_btn">더보기</button>
-							</div>
-						</div>
-					</li>
-					<li class="cards_item">
-						<div class="card">
-							<div class="card_image">
-								<img src="https://picsum.photos/500/300/?image=10">
-							</div>
-							<div class="card_content">
-								<h2 class="card_title">서울</h2>
-								<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-								<button class="btn card_btn">더보기</button>
-							</div>
-						</div>
-					</li>
-					<li class="cards_item">
-						<div class="card">
-							<div class="card_image">
-								<img src="https://picsum.photos/500/300/?image=10">
-							</div>
-							<div class="card_content">
-								<h2 class="card_title">서울</h2>
-								<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-								<button class="btn card_btn">더보기</button>
-							</div>
-						</div>
-					</li>
-					<li class="cards_item">
-						<div class="card">
-							<div class="card_image">
-								<img src="https://picsum.photos/500/300/?image=10">
-							</div>
-							<div class="card_content">
-								<h2 class="card_title">서울</h2>
-								<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-								<button class="btn card_btn">더보기</button>
-							</div>
-						</div>
-					</li></div>
-				
-					
+					</div>
+				</div>
+				<div>
+					<button class="btn btn-sm">
+						<a href="#">거리순</a>
+					</button>
+					<button class="btn btn-sm">
+						<a href="#">인기순</a>
+					</button>
+				</div>
+				<div class="main">
+					<div>
+						<ul class="cards">
+							<li class="cards_item">
+								<div class="card">
+									<div class="card_image">
+										<img src="https://picsum.photos/500/300/?image=10">
+									</div>
+									<div class="card_content">
+										<h2 class="card_title">서울</h2>
+										<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
+										<button class="btn1 card_btn">더보기</button>
+									</div>
+								</div>
+							</li>
+							<li class="cards_item">
+								<div class="card">
+									<div class="card_image">
+										<img src="https://picsum.photos/500/300/?image=10">
+									</div>
+									<div class="card_content">
+										<h2 class="card_title">서울</h2>
+										<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
+										<button class="btn1 card_btn">더보기</button>
+									</div>
+								</div>
+							</li>
+							<li class="cards_item">
+								<div class="card">
+									<div class="card_image">
+										<img src="https://picsum.photos/500/300/?image=10">
+									</div>
+									<div class="card_content">
+										<h2 class="card_title">서울</h2>
+										<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
+										<button class="btn1 card_btn">더보기</button>
+									</div>
+								</div>
+							</li>
+							<li class="cards_item">
+								<div class="card">
+									<div class="card_image">
+										<img src="https://picsum.photos/500/300/?image=10">
+									</div>
+									<div class="card_content">
+										<h2 class="card_title">서울</h2>
+										<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
+										<button class="btn1 card_btn">더보기</button>
+									</div>
+								</div>
+							</li>
+							<li class="cards_item">
+								<div class="card">
+									<div class="card_image">
+										<img src="https://picsum.photos/500/300/?image=10">
+									</div>
+									<div class="card_content">
+										<h2 class="card_title">서울</h2>
+										<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
+										<button class="btn1 card_btn">더보기</button>
+									</div>
+								</div>
+							</li>
+							<li class="cards_item">
+								<div class="card">
+									<div class="card_image">
+										<img src="https://picsum.photos/500/300/?image=10">
+									</div>
+									<div class="card_content">
+										<h2 class="card_title">서울</h2>
+										<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
+										<button class="btn1 card_btn">더보기</button>
+									</div>
+								</div>
+							</li>
+							<li class="cards_item">
+								<div class="card">
+									<div class="card_image">
+										<img src="https://picsum.photos/500/300/?image=10">
+									</div>
+									<div class="card_content">
+										<h2 class="card_title">서울</h2>
+										<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
+										<button class="btn1 card_btn">더보기</button>
+									</div>
+								</div>
+							</li>
+							<li class="cards_item">
+								<div class="card">
+									<div class="card_image">
+										<img src="https://picsum.photos/500/300/?image=10">
+									</div>
+									<div class="card_content">
+										<h2 class="card_title">서울</h2>
+										<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
+										<button class="btn1 card_btn">더보기</button>
+									</div>
+								</div>
+							</li>
+							<li class="cards_item">
+								<div class="card">
+									<div class="card_image">
+										<img src="https://picsum.photos/500/300/?image=10">
+									</div>
+									<div class="card_content">
+										<h2 class="card_title">서울</h2>
+										<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
+										<button class="btn1 card_btn">더보기</button>
+									</div>
+								</div>
+							</li>
+					</div>
+				</div>
+				<div class="pageBtn" style="margin-bottom: 20px;">
+					<button>
+						<a href="#" class="btn btn-sm">1</a>
+					</button>
+					<button>
+						<a href="#" class="btn btn-sm">2</a>
+					</button>
+					<button>
+						<a href="#" class="btn btn-sm">3</a>
+					</button>
+					<button>
+						<a href="#" class="btn btn-sm">4</a>
+					</button>
+					<button>
+						<a href="#" class="btn btn-sm">5</a>
+					</button>
+				</div>
+
 			</main>
 			<aside>달력이랑 날씨 넣을 자리</aside>
 		</section>

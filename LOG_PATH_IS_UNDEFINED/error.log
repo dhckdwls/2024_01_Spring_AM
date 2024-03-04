@@ -1,356 +1,323 @@
-2024-02-28 09:10:20 [ERROR] o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usrHomeController' method 
-com.example.demo.controller.UsrHomeController#showRoot()
-to { [/]}: There is already 'usrAPITestController' bean method
-com.example.demo.controller.UsrAPITestController#showRoot() mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1768)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
-	at com.example.demo.DemoApplication.main(DemoApplication.java:10)
+2024-03-04 10:34:46 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.length()" because "afterLoginUri" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "String.length()" because "afterLoginUri" is null
+	at com.example.demo.controller.UsrMemberController.doLogin(UsrMemberController.java:80)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'usrHomeController' method 
-com.example.demo.controller.UsrHomeController#showRoot()
-to { [/]}: There is already 'usrAPITestController' bean method
-com.example.demo.controller.UsrAPITestController#showRoot() mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:634)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:441)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298)
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:225)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1815)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1764)
-	... 21 common frames omitted
-2024-02-28 09:18:45 [ERROR] o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usrHomeController' method 
-com.example.demo.controller.UsrHomeController#showRoot()
-to { [/]}: There is already 'projectTestController' bean method
-com.example.demo.controller.ProjectTestController#showRoot() mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1768)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
-	at com.example.demo.DemoApplication.main(DemoApplication.java:10)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'usrHomeController' method 
-com.example.demo.controller.UsrHomeController#showRoot()
-to { [/]}: There is already 'projectTestController' bean method
-com.example.demo.controller.ProjectTestController#showRoot() mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:634)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:441)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298)
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:225)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1815)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1764)
-	... 21 common frames omitted
-2024-02-28 17:16:21 [ERROR] o.a.c.c.C.[.[localhost].[/].[jsp] - Servlet.service() for servlet [jsp] threw exception
-org.apache.jasper.JasperException: Unable to compile class for JSP: 
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Cannot use 'var' on variable without initializer
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token "(", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ")", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-URL cannot be resolved to a type
-20:                 prompt, maxTokens, temperature, topP, n);
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-
-
-An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-URL cannot be resolved to a type
-20:                 prompt, maxTokens, temperature, topP, n);
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-
-
-An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-HttpURLConnection cannot be resolved to a type
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-27:         connection.setRequestMethod("POST");
-
-
-An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-HttpURLConnection cannot be resolved to a type
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-27:         connection.setRequestMethod("POST");
-
-
-An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-DataOutputStream cannot be resolved to a type
-32: 
-33:         // 출력 스트림을 통해 요청 본문 데이터 전송
-34:         connection.setDoOutput(true);
-35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-36:         wr.writeBytes(requestBody);
-37:         wr.flush();
-38:         wr.close();
-
-
-An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-DataOutputStream cannot be resolved to a type
-32: 
-33:         // 출력 스트림을 통해 요청 본문 데이터 전송
-34:         connection.setDoOutput(true);
-35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-36:         wr.writeBytes(requestBody);
-37:         wr.flush();
-38:         wr.close();
-
-
-An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-BufferedReader cannot be resolved to a type
-42:         System.out.println("Response Code: " + responseCode);
-43: 
-44:         // 응답 본문 읽기
-45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-46:         String inputLine;
-47:         StringBuffer responseBuffer = new StringBuffer();
-48: 
-
-
-An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-BufferedReader cannot be resolved to a type
-42:         System.out.println("Response Code: " + responseCode);
-43: 
-44:         // 응답 본문 읽기
-45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-46:         String inputLine;
-47:         StringBuffer responseBuffer = new StringBuffer();
-48: 
-
-
-An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-InputStreamReader cannot be resolved to a type
-42:         System.out.println("Response Code: " + responseCode);
-43: 
-44:         // 응답 본문 읽기
-45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-46:         String inputLine;
-47:         StringBuffer responseBuffer = new StringBuffer();
-48: 
-
-
-An error occurred at line: [55] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Duplicate local variable response
-52:         in.close();
-53: 
-54:         // 응답 출력
-55:         String response = responseBuffer.toString();
-56:         System.out.println("Response: " + response);
-57: 
-58:         return response;
-
-
-An error occurred at line: [58] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Void methods cannot return a value
-55:         String response = responseBuffer.toString();
-56:         System.out.println("Response: " + response);
-57: 
-58:         return response;
-59: 
-60:     } catch (Exception e) {
-61:         e.printStackTrace();
-
-
-An error occurred at line: [62] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Void methods cannot return a value
-59: 
-60:     } catch (Exception e) {
-61:         e.printStackTrace();
-62:         return null;
-63:     }
-64: }
-65: 
-
-
-An error occurred at line: [67] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Duplicate local variable prompt
-64: }
-65: 
-66: // KoGPT에게 전달할 명령어 구성
-67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
-68: 
-69: // 함수 호출
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-
-
-An error occurred at line: [70] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-The method kogptApi(String, int, double, double, int) is undefined for the type APITest1_jsp
-67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
-68: 
-69: // 함수 호출
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-71: 
-72: // JSON 형식의 응답 데이터를 파싱
-73: JSONObject jsonResponse = new JSONObject(responseJson);
-
-
-An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-JSONObject cannot be resolved to a type
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-71: 
-72: // JSON 형식의 응답 데이터를 파싱
-73: JSONObject jsonResponse = new JSONObject(responseJson);
-74: 
-75: // 파싱한 데이터를 활용하여 필요한 작업 수행
-76: String generatedText = jsonResponse.getString("generated_text");
-
-
-An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-JSONObject cannot be resolved to a type
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-71: 
-72: // JSON 형식의 응답 데이터를 파싱
-73: JSONObject jsonResponse = new JSONObject(responseJson);
-74: 
-75: // 파싱한 데이터를 활용하여 필요한 작업 수행
-76: String generatedText = jsonResponse.getString("generated_text");
-
-
-Stacktrace:
-	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
-	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
-	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:513)
-	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:887)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-03-04 13:42:45 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalStateException: Optional int parameter 'id' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.] with root cause
+java.lang.IllegalStateException: Optional int parameter 'id' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.handleNullValue(AbstractNamedValueMethodArgumentResolver.java:263)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:116)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:887)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-03-04 13:43:14 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalStateException: Optional int parameter 'id' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.] with root cause
+java.lang.IllegalStateException: Optional int parameter 'id' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.handleNullValue(AbstractNamedValueMethodArgumentResolver.java:263)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:116)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:887)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-03-04 13:43:15 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalStateException: Optional int parameter 'id' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.] with root cause
+java.lang.IllegalStateException: Optional int parameter 'id' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.handleNullValue(AbstractNamedValueMethodArgumentResolver.java:263)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:116)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:887)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-03-04 13:43:15 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalStateException: Optional int parameter 'id' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.] with root cause
+java.lang.IllegalStateException: Optional int parameter 'id' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.handleNullValue(AbstractNamedValueMethodArgumentResolver.java:263)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:116)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:887)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-03-04 13:43:15 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalStateException: Optional int parameter 'id' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.] with root cause
+java.lang.IllegalStateException: Optional int parameter 'id' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.handleNullValue(AbstractNamedValueMethodArgumentResolver.java:263)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:116)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:887)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-03-04 14:30:03 [ERROR] o.a.c.c.C.[.[localhost].[/].[jsp] - Servlet.service() for servlet [jsp] threw exception
+org.apache.jasper.JasperException: /WEB-INF/jsp/usr/home/APITest.jsp (line: [54], column: [4]) Invalid directive
+	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:41)
+	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:299)
+	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:99)
+	at org.apache.jasper.compiler.Parser.parseDirective(Parser.java:510)
+	at org.apache.jasper.compiler.Parser.parseFileDirectives(Parser.java:1796)
+	at org.apache.jasper.compiler.Parser.parse(Parser.java:135)
+	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:245)
+	at org.apache.jasper.compiler.ParserController.parseDirectives(ParserController.java:128)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:207)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:396)
 	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
 	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
 	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
@@ -420,522 +387,18 @@ Stacktrace:
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:840)
-2024-02-28 17:16:21 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Unable to compile class for JSP: 
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Cannot use 'var' on variable without initializer
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token "(", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ")", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-URL cannot be resolved to a type
-20:                 prompt, maxTokens, temperature, topP, n);
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-
-
-An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-URL cannot be resolved to a type
-20:                 prompt, maxTokens, temperature, topP, n);
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-
-
-An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-HttpURLConnection cannot be resolved to a type
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-27:         connection.setRequestMethod("POST");
-
-
-An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-HttpURLConnection cannot be resolved to a type
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-27:         connection.setRequestMethod("POST");
-
-
-An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-DataOutputStream cannot be resolved to a type
-32: 
-33:         // 출력 스트림을 통해 요청 본문 데이터 전송
-34:         connection.setDoOutput(true);
-35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-36:         wr.writeBytes(requestBody);
-37:         wr.flush();
-38:         wr.close();
-
-
-An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-DataOutputStream cannot be resolved to a type
-32: 
-33:         // 출력 스트림을 통해 요청 본문 데이터 전송
-34:         connection.setDoOutput(true);
-35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-36:         wr.writeBytes(requestBody);
-37:         wr.flush();
-38:         wr.close();
-
-
-An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-BufferedReader cannot be resolved to a type
-42:         System.out.println("Response Code: " + responseCode);
-43: 
-44:         // 응답 본문 읽기
-45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-46:         String inputLine;
-47:         StringBuffer responseBuffer = new StringBuffer();
-48: 
-
-
-An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-BufferedReader cannot be resolved to a type
-42:         System.out.println("Response Code: " + responseCode);
-43: 
-44:         // 응답 본문 읽기
-45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-46:         String inputLine;
-47:         StringBuffer responseBuffer = new StringBuffer();
-48: 
-
-
-An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-InputStreamReader cannot be resolved to a type
-42:         System.out.println("Response Code: " + responseCode);
-43: 
-44:         // 응답 본문 읽기
-45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-46:         String inputLine;
-47:         StringBuffer responseBuffer = new StringBuffer();
-48: 
-
-
-An error occurred at line: [55] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Duplicate local variable response
-52:         in.close();
-53: 
-54:         // 응답 출력
-55:         String response = responseBuffer.toString();
-56:         System.out.println("Response: " + response);
-57: 
-58:         return response;
-
-
-An error occurred at line: [58] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Void methods cannot return a value
-55:         String response = responseBuffer.toString();
-56:         System.out.println("Response: " + response);
-57: 
-58:         return response;
-59: 
-60:     } catch (Exception e) {
-61:         e.printStackTrace();
-
-
-An error occurred at line: [62] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Void methods cannot return a value
-59: 
-60:     } catch (Exception e) {
-61:         e.printStackTrace();
-62:         return null;
-63:     }
-64: }
-65: 
-
-
-An error occurred at line: [67] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Duplicate local variable prompt
-64: }
-65: 
-66: // KoGPT에게 전달할 명령어 구성
-67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
-68: 
-69: // 함수 호출
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-
-
-An error occurred at line: [70] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-The method kogptApi(String, int, double, double, int) is undefined for the type APITest1_jsp
-67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
-68: 
-69: // 함수 호출
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-71: 
-72: // JSON 형식의 응답 데이터를 파싱
-73: JSONObject jsonResponse = new JSONObject(responseJson);
-
-
-An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-JSONObject cannot be resolved to a type
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-71: 
-72: // JSON 형식의 응답 데이터를 파싱
-73: JSONObject jsonResponse = new JSONObject(responseJson);
-74: 
-75: // 파싱한 데이터를 활용하여 필요한 작업 수행
-76: String generatedText = jsonResponse.getString("generated_text");
-
-
-An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-JSONObject cannot be resolved to a type
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-71: 
-72: // JSON 형식의 응답 데이터를 파싱
-73: JSONObject jsonResponse = new JSONObject(responseJson);
-74: 
-75: // 파싱한 데이터를 활용하여 필요한 작업 수행
-76: String generatedText = jsonResponse.getString("generated_text");
-
-
-Stacktrace:] with root cause
-org.apache.jasper.JasperException: Unable to compile class for JSP: 
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Cannot use 'var' on variable without initializer
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token "(", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ",", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [12] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Syntax error on token ")", ; expected
-9: <%
-10: // KoGPT API 호출을 위한 메서드 선언
-11: // 각 파라미터 기본값으로 설정
-12: var kogptApi(String prompt, int maxTokens, double temperature, double topP, int n) {
-13:     String apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-14:     String apiKey = "YOUR_REST_API_KEY";  // 본인의 API 키로 교체
-15: 
-
-
-An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-URL cannot be resolved to a type
-20:                 prompt, maxTokens, temperature, topP, n);
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-
-
-An error occurred at line: [23] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-URL cannot be resolved to a type
-20:                 prompt, maxTokens, temperature, topP, n);
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-
-
-An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-HttpURLConnection cannot be resolved to a type
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-27:         connection.setRequestMethod("POST");
-
-
-An error occurred at line: [24] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-HttpURLConnection cannot be resolved to a type
-21: 
-22:         // URL 설정
-23:         URL url = new URL(apiUrl);
-24:         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-25: 
-26:         // 요청 메서드 설정
-27:         connection.setRequestMethod("POST");
-
-
-An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-DataOutputStream cannot be resolved to a type
-32: 
-33:         // 출력 스트림을 통해 요청 본문 데이터 전송
-34:         connection.setDoOutput(true);
-35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-36:         wr.writeBytes(requestBody);
-37:         wr.flush();
-38:         wr.close();
-
-
-An error occurred at line: [35] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-DataOutputStream cannot be resolved to a type
-32: 
-33:         // 출력 스트림을 통해 요청 본문 데이터 전송
-34:         connection.setDoOutput(true);
-35:         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-36:         wr.writeBytes(requestBody);
-37:         wr.flush();
-38:         wr.close();
-
-
-An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-BufferedReader cannot be resolved to a type
-42:         System.out.println("Response Code: " + responseCode);
-43: 
-44:         // 응답 본문 읽기
-45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-46:         String inputLine;
-47:         StringBuffer responseBuffer = new StringBuffer();
-48: 
-
-
-An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-BufferedReader cannot be resolved to a type
-42:         System.out.println("Response Code: " + responseCode);
-43: 
-44:         // 응답 본문 읽기
-45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-46:         String inputLine;
-47:         StringBuffer responseBuffer = new StringBuffer();
-48: 
-
-
-An error occurred at line: [45] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-InputStreamReader cannot be resolved to a type
-42:         System.out.println("Response Code: " + responseCode);
-43: 
-44:         // 응답 본문 읽기
-45:         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-46:         String inputLine;
-47:         StringBuffer responseBuffer = new StringBuffer();
-48: 
-
-
-An error occurred at line: [55] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Duplicate local variable response
-52:         in.close();
-53: 
-54:         // 응답 출력
-55:         String response = responseBuffer.toString();
-56:         System.out.println("Response: " + response);
-57: 
-58:         return response;
-
-
-An error occurred at line: [58] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Void methods cannot return a value
-55:         String response = responseBuffer.toString();
-56:         System.out.println("Response: " + response);
-57: 
-58:         return response;
-59: 
-60:     } catch (Exception e) {
-61:         e.printStackTrace();
-
-
-An error occurred at line: [62] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Void methods cannot return a value
-59: 
-60:     } catch (Exception e) {
-61:         e.printStackTrace();
-62:         return null;
-63:     }
-64: }
-65: 
-
-
-An error occurred at line: [67] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-Duplicate local variable prompt
-64: }
-65: 
-66: // KoGPT에게 전달할 명령어 구성
-67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
-68: 
-69: // 함수 호출
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-
-
-An error occurred at line: [70] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-The method kogptApi(String, int, double, double, int) is undefined for the type APITest1_jsp
-67: String prompt = "인간처럼 생각하고, 행동하는 '지능'을 통해 인류가 이제까지 풀지 못했던";
-68: 
-69: // 함수 호출
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-71: 
-72: // JSON 형식의 응답 데이터를 파싱
-73: JSONObject jsonResponse = new JSONObject(responseJson);
-
-
-An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-JSONObject cannot be resolved to a type
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-71: 
-72: // JSON 형식의 응답 데이터를 파싱
-73: JSONObject jsonResponse = new JSONObject(responseJson);
-74: 
-75: // 파싱한 데이터를 활용하여 필요한 작업 수행
-76: String generatedText = jsonResponse.getString("generated_text");
-
-
-An error occurred at line: [73] in the jsp file: [/WEB-INF/jsp/usr/home/APITest1.jsp]
-JSONObject cannot be resolved to a type
-70: String responseJson = kogptApi(prompt, 32, 1.0, 1.0, 3);
-71: 
-72: // JSON 형식의 응답 데이터를 파싱
-73: JSONObject jsonResponse = new JSONObject(responseJson);
-74: 
-75: // 파싱한 데이터를 활용하여 필요한 작업 수행
-76: String generatedText = jsonResponse.getString("generated_text");
-
-
-Stacktrace:
-	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
-	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
-	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:513)
-	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+2024-03-04 14:30:03 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [/WEB-INF/jsp/usr/home/APITest.jsp (line: [54], column: [4]) Invalid directive] with root cause
+org.apache.jasper.JasperException: /WEB-INF/jsp/usr/home/APITest.jsp (line: [54], column: [4]) Invalid directive
+	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:41)
+	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:299)
+	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:99)
+	at org.apache.jasper.compiler.Parser.parseDirective(Parser.java:510)
+	at org.apache.jasper.compiler.Parser.parseFileDirectives(Parser.java:1796)
+	at org.apache.jasper.compiler.Parser.parse(Parser.java:135)
+	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:245)
+	at org.apache.jasper.compiler.ParserController.parseDirectives(ParserController.java:128)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:207)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:396)
 	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
 	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
 	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
@@ -1005,3 +468,17 @@ Stacktrace:
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-03-04 14:56:39 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+

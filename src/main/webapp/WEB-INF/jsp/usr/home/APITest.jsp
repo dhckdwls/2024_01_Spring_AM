@@ -27,39 +27,58 @@
 	getData2();
 	
 </script>
+
 <script>
-// KoGPT REST API URL
-const apiUrl = "https://api.kakaobrain.com/v1/inference/kogpt/generation";
-
-// REST API 키
-const apiKey = "9e69d716eb64b669fb82a55fbb9c2e47";
-
-// 요청 헤더 설정
-const headers = new Headers({
-    "Content-Type": "application/json",
-    "Authorization": "KakaoAK " + apiKey
-});
-
-// 요청 본문 데이터
-const requestBody = {
-    input: "오늘 저녁 메뉴 추천"
+const API_KEY = '7gBxrsj7WSHvOZjYdEQXGXuT9pq9L8NMGDZ9hzG7VnyftpPH7IIKkWxq2HkS94X9AsKLEzXCkaOZeH94lv28Bg%3D%3D';
+var xhr = new XMLHttpRequest();
+var url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst'; /*URL*/
+var queryParams = '?' + encodeURIComponent('serviceKey') + '='+ API_KEY; /*Service Key*/
+queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1'); /**/
+queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('XML'); /**/
+queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent('20240303'); /**/
+queryParams += '&' + encodeURIComponent('base_time') + '=' + encodeURIComponent('0500'); /**/
+queryParams += '&' + encodeURIComponent('nx') + '=' + encodeURIComponent('55'); /**/
+queryParams += '&' + encodeURIComponent('ny') + '=' + encodeURIComponent('127'); /**/
+xhr.open('GET', url + queryParams);
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+    }
 };
 
-// fetch 함수를 사용하여 API 호출
-fetch(apiUrl, {
-    method: "POST",
-    headers: headers,
-    body: JSON.stringify(requestBody)
-})
-.then(response => response.json())
-.then(data => {
-    // 여기에서 응답(data)를 가지고 필요한 작업 수행
-    console.log("Response:", data);
-})
-.catch(error => {
-    console.error("Error:", error);
-});
+xhr.send('');
 </script>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+    <header>
+        <resultCode>0</resultCode>
+        <resultMsg>NORMAL_SERVICE</resultMsg>
+    </header>
+    <body>
+        <dataType>XML</dataType>
+        <items>
+            <item>
+                <baseDate>20210628</baseDate>
+                <baseTime>0500</baseTime>
+                <category>TMP</category>
+                <fcstDate>20240303</fcstDate>
+                <fcstTime>0600</fcstTime>
+                <fcstValue>21</fcstValue>
+                <nx>55</nx>
+                <ny>127</ny>
+            </item>
+        </items>
+        <numOfRows>10</numOfRows>
+        <pageNo>1</pageNo>
+        <totalCount>742</totalCount>
+    </body>
+</response>
+
+
+
 
 
 

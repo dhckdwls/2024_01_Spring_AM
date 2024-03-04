@@ -54,4 +54,24 @@ public class UsrHomeController {
 
 		return "/usr/home/testtest";
 	}
+	
+	@RequestMapping("/usr/home/testwrite")
+	public String testwrite() {
+
+		return "/usr/home/testwrite";
+	}
+	
+	@RequestMapping("/usr/home/testrandom")
+	public String testrandom() {
+
+		return "/usr/home/testrandom";
+	}
+	
+	@RequestMapping("/usr/home/testmypage")
+	public String testmypage() {
+
+		return "/usr/home/testmypage";
+	}
+	
+	
 }
