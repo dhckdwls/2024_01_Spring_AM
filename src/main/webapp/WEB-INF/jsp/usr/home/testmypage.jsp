@@ -1,163 +1,85 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>테스트메인</title>
-</head>
-<body>
-	<script src="/resource/common.js" defer="defer"></script>
-	<!-- 테일윈드 불러오기 -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
-
-	<!-- daisy ui 불러오기 -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/4.6.1/full.css" />
-
-	<!-- 폰트어썸 불러오기 -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
-	<!-- 제이쿼리 불러오기 -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-<style>
-/* 노말라이즈 */
-body,
-h1 {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* 커스텀 */
-.container {
-  display: flex;
-  flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
-}
-
-/* 상단 */
-.container > .header {
-  background-color: deepskyblue;
-  flex-grow: 0;
-}
-
-.header {
-  justify-content: space-between;
-  border : 2px solid red;
-}
-
-.top_left > div{
-  display : block;
-}
-
-.top_left > div > a{
-  display : block;
-  padding : 10px;
-}
-
-.top_left > div:hover > a{
-  background-color: blue;
-}
-
-
-.top_right > div{
-  display : inline-block;
-}
-
-.top_right>div:hover>a{
-  background-color: blue;
-}
-
-.top_right > div > a{
-  display : block;
-  padding : 10px;
-  
-}
-
-/* 중단 */
-.container > .content {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-}
-
-/* 중단 왼편 */
-.container > .content > nav {
-  background-color: #aed6f1;
-  flex-basis: 150px;
-/*   flex-shrink: 0; */
-  min-width: 10%;
-  border: 2px solid red;
-}
-
-/* 중단 메인 */
-.container > .content > main {
-  background-color: #aed6f1;
-  flex-grow: 1;
-/*   flex-shrink: 1; */
-  border: 2px solid red;
-}
-
-/* 중단 오른편 */
-.container > .content > aside {
-  flex-basis: 120px;
-/*   flex-shrink: 0; */
-  background-color: #aed6f1;
-  min-width: 10%;
-  border: 2px solid red;
-}
-
-/* 하단 */
-.container > footer {
-  flex-grow: 0;
-  background-color: deepskyblue;
-  display: flex;
-  justify-content: center;
-}
-
-</style>
-
-
-<div class="container">
-		<div class="header flex items-center">
-			<div class="top_left">
-				<div><a href="#">RANDOM TRIP (로고)</a></div>
-			</div>
-			<div class="top_right">
-				<div><a href="#">LOGIN</a></div>
-				<div><a href="#">JOIN</a></div>
-			</div>
-
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
+<%@ include file="../common/head.jspf"%>
+<main style="text-align: center;">
+	<div>
+		<h1 style="font-size: 3rem;">마이페이지</h1>
+	</div>
+	<div class="container1 flex flex-col">
+		<div class="card" style="width: 40%;">
+			<h2 style="text-align: center; padding: 20px; margin: 0; background-color: red; color: white;">User Information</h2>
+			<table>
+				<tr>
+					<th>이름 :</th>
+					<td>test</td>
+				</tr>
+				<tr>
+					<th>나이 :</th>
+					<td>test</td>
+				</tr>
+				<tr>
+					<th>성별 :</th>
+					<td>test</td>
+				</tr>
+				<tr>
+					<th>아이디 :</th>
+					<td>test</td>
+				</tr>
+				<tr>
+					<th>주소 :</th>
+					<td>test</td>
+				</tr>
+				<tr>
+					<th>전화번호 :</th>
+					<td>test</td>
+				</tr>
+				<tr>
+					<th>Email :</th>
+					<td>test</td>
+				</tr>
+			</table>
 		</div>
-		<section class="content">
-			<nav>
-				<ul>
-					<li><a href="#">여행지추천기</a></li>
-					<li><a href="#">여행지</a></li>
-					<li><a href="#">지도</a></li>
-				</ul>
-			</nav>
-			<main>
-			
-			테스트마이페이지
-			
-			
-			</main>
-			<aside>달력이랑 날씨 넣을 자리</aside>
-		</section>
-		<footer>
-			<a href="#">하단</a>
-		</footer>
+		<div>
+			<button>회원정보 수정</button>
+			<button>회원탈퇴</button>
+		</div>
 	</div>
 
 
 
-</body>
-</html>
+</main>
+
+<style>
+.container1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #f1f1f1;
+}
+
+.card {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 15px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+</style>
+<%@ include file="../common/foot.jspf"%>

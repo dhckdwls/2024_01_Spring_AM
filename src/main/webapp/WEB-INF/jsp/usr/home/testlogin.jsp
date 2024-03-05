@@ -1,198 +1,289 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>테스트메인</title>
-</head>
-<body>
-	<script src="/resource/common.js" defer="defer"></script>
-	<!-- 테일윈드 불러오기 -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
+<%@ include file="../common/head.jspf"%>
 
-	<!-- daisy ui 불러오기 -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/4.6.1/full.css" />
 
-	<!-- 폰트어썸 불러오기 -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<main style="text-align: center;">
+	<div>
+		<h1 style="font-size: 3rem;">로그인</h1>
+	</div>
+	<div class="login_box" style="display: inline-block;">
+		<form>
+			<div class="group">
+				<input type="text"><span class="highlight"></span><span class="bar"></span> <label>아이디</label>
+			</div>
+			<div>없는아이디</div>
+			<div class="group">
+				<input type="email"><span class="highlight"></span><span class="bar"></span> <label>비밀번호</label>
+			</div>
+			<div>비밀번호틀림</div>
+			<button type="button" class="button buttonBlue">
+				로그인
+				<div class="ripples buttonRipples">
+					<span class="ripplesCircle"></span>
+				</div>
+			</button>
+			<div>아이디찾기 비밀번호찾기 회원가입</div>
+		</form>
+	</div>
 
-	<!-- 제이쿼리 불러오기 -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</main>
 
-	<style>
-/* 노말라이즈 */
-body, h1 {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+
+<style>
+* {
+	box-sizing: border-box;
 }
 
-a {
-	color: inherit;
-	text-decoration: none;
+/* body {
+   -webkit-font-smoothing: antialiased;
+}
+ */
+form {
+	width: 380px;
+	margin: 4em auto;
+	padding: 3em 2em 2em 2em;
+	/* background: red; */
+	border: 1px solid red;
+	/* box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px; */
 }
 
-/* 커스텀 */
-.container {
-	display: flex;
-	flex-direction: column;
-	min-width: 100vw;
-	min-height: 100vh;
+.group {
+	position: relative;
+	/* margin-bottom: 30px; */ /* 임시처리  */
 }
 
-/* 상단 */
-.container>.header {
-	background-color: deepskyblue;
-	flex-grow: 0;
-}
-
-.header {
-	justify-content: space-between;
-	border: 2px solid red;
-}
-
-.top_left>div {
+input {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
 	display: block;
+	background: #fafafa;
+	color: #636363;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #757575;
 }
 
-.top_left>div>a {
+input:focus {
+	outline: none;
+}
+
+/* Label */
+label {
+	color: #999;  /* 아이디,비밀번호 글자색 */
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: all 0.2s ease;
+}
+
+/* active */
+input:focus ~ label, input.used ~ label {
+	top: -20px;
+	transform: scale(.75);
+	left: -2px;
+	/* font-size: 14px; */
+	color: #4a89dc;
+}
+
+/* Underline */
+.bar {
+	position: relative;
 	display: block;
-	padding: 10px;
+	width: 100%;
 }
 
-.top_left>div:hover>a {
-	background-color: blue;
+.bar:before, .bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #4a89dc;
+	transition: all 0.2s ease;
 }
 
-.top_right>div {
+.bar:before {
+	left: 50%;
+}
+
+.bar:after {
+	right: 50%;
+}
+
+/* active */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+	width: 50%;
+}
+
+/* Highlight */
+.highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+/* active */
+input:focus ~ .highlight {
+	animation: inputHighlighter 0.3s ease;
+}
+
+/* Animations */
+@
+keyframes inputHighlighter {from { background:#4a89dc;
+	
+}
+
+to {
+	width: 0;
+	background: transparent;
+}
+
+}
+
+/* Button */
+.button {
+	position: relative;
 	display: inline-block;
-}
-
-.top_right>div:hover>a {
-	background-color: blue;
-}
-
-.top_right>div>a {
-	display: block;
-	padding: 10px;
-}
-
-/* 중단 */
-.container>.content {
-	display: flex;
-	flex-direction: row;
-	flex-grow: 1;
-}
-
-/* 중단 왼편 */
-.container>.content>nav {
-	background-color: #aed6f1;
-	flex-basis: 150xp;
-	flex-shrink: 0;
-	min-width: 10%;
-	border: 2px solid red;
-}
-
-/* 중단 메인 */
-.container>.content>main {
-	background-color: #aed6f1;
-	flex-grow: 1;
-	flex-shrink: 1;
-	border: 2px solid red;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-/* 중단 오른편 */
-.container>.content>aside {
-	flex-basis: 120px;
-	flex-shrink: 0;
-	background-color: #aed6f1;
-	min-width: 10%;
-	border: 2px solid red;
-}
-
-/* 하단 */
-.container>footer {
-	flex-grow: 0;
-	background-color: deepskyblue;
-	display: flex;
-	justify-content: center;
-}
-
-.table-box-1 th, .table-box-1 td {
-	border: 1px solid black;
-	padding: 10px;
+	padding: 12px 24px;
+	margin: .3em 0 1em 0;
+	width: 100%;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 16px;
+	line-height: 20px;
+	-webkit-font-smoothing: antialiased;
 	text-align: center;
+	letter-spacing: 1px;
+	background: transparent;
+	border: 0;
+	border-bottom: 2px solid #3160B6;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+
+.button:focus {
+	outline: 0;
+}
+
+/* Button modifiers */
+.buttonBlue {
+	background: #4a89dc;
+	text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+
+.buttonBlue:hover {
+	background: #357bd8;
+}
+
+/* Ripples container */
+.ripples {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: transparent;
+}
+
+/* Ripples circle */
+.ripplesCircle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.25);
+}
+
+.ripples.is-active .ripplesCircle {
+	animation: ripples .4s ease-in;
+}
+
+/* Ripples animation */
+@
+keyframes ripples { 0% {
+	opacity: 0;
+}
+25
+%
+{
+opacity
+:
+1;
+}
+100
+%
+{
+width
+:
+200%;
+padding-bottom
+:
+200%;
+opacity
+:
+0;
+}
 }
 </style>
 
 
-	<div class="container">
-		<div class="header flex items-center">
-			<div class="top_left">
-				<div>
-					<a href="#">사이트 (로고)</a>
-				</div>
-			</div>
-			<div class="top_right">
-				<div>
-					<a href="#">LOGIN</a>
-				</div>
-				<div>
-					<a href="#">JOIN</a>
-				</div>
-			</div>
+<script>
+	$(window, document, undefined)
+			.ready(
+					function() {
 
+						$('input').blur(function() {
+							var $this = $(this);
+							if ($this.val())
+								$this.addClass('used');
+							else
+								$this.removeClass('used');
+						});
 
-		</div>
-		<section class="content">
-			<nav>
-				<ul>
-					<li><a href="#">여행지추천기</a></li>
-					<li><a href="#">여행지</a></li>
-					<li><a href="#">지도</a></li>
-					<li><a href="#">마이페이지</a></li>
-					<li><a href="#">QnA</a></li>
-				</ul>
-			</nav>
-			<main>
+						var $ripples = $('.ripples');
 
-				<form action="../member/doLogin" method="POST">
-					<table class="join-box table-box-1" border="1">
-						<tbody>
-							<tr>
-								<th>아이디</th>
-								<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-									placeholder="아이디를 입력해주세요" name="loginId" /></td>
-							</tr>
-							<tr>
-								<th>비밀번호</th>
-								<td><input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-									placeholder="비밀번호를 입력해주세요" name="loginPw" /></td>
-							</tr>
-							<tr>
-								<th></th>
-								<td><input class="btn btn-outline btn-info btn-sm" type="submit" value="로그인" />
-									<button class="btn btn-sm">아이디찾기</button>
-									<button class="btn btn-sm">비밀번호 찾기</button>
-									<button class="btn btn-sm">회원가입</button></td>
-							</tr>
-						</tbody>
-					</table>
-				</form>
+						$ripples.on('click.Ripples', function(e) {
 
+							var $this = $(this);
+							var $offset = $this.parent().offset();
+							var $circle = $this.find('.ripplesCircle');
 
-			</main>
-			<aside>달력이랑 날씨 넣을 자리</aside>
-		</section>
-		<footer>
-			<a href="#">하단</a>
-		</footer>
-	</div>
+							var x = e.pageX - $offset.left;
+							var y = e.pageY - $offset.top;
 
+							$circle.css({
+								top : y + 'px',
+								left : x + 'px'
+							});
 
+							$this.addClass('is-active');
 
-</body>
-</html>
+						});
+
+						$ripples
+								.on(
+										'animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd',
+										function(e) {
+											$(this).removeClass('is-active');
+										});
+
+					});
+</script>
+
+<%@ include file="../common/foot.jspf"%>
