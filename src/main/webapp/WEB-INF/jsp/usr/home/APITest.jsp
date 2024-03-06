@@ -36,7 +36,7 @@ var queryParams = '?' + encodeURIComponent('serviceKey') + '='+ API_KEY; /*Servi
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1'); /**/
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('XML'); /**/
-queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent('20240303'); /**/
+queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent('20240306'); /**/
 queryParams += '&' + encodeURIComponent('base_time') + '=' + encodeURIComponent('0500'); /**/
 queryParams += '&' + encodeURIComponent('nx') + '=' + encodeURIComponent('55'); /**/
 queryParams += '&' + encodeURIComponent('ny') + '=' + encodeURIComponent('127'); /**/

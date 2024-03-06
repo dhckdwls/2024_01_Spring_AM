@@ -3,11 +3,10 @@
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
 <%@ include file="../common/head2.jspf"%>
 <main class="flex flex-col">
-	<h1 style="font-size:4rem; font-weight:bold;">여행지</h1>
+	<h1 style="font-size: 4rem; font-weight: bold;">여행지</h1>
 	<div>
 		<div class="mx-auto overflow-x-auto">
 			<div class="mb-4 flex">
-				<div class="badge badge-outline">${articlesCount }개</div>
 				<div class="flex-grow"></div>
 				<form action="">
 					<input type="hidden" name="boardId" value="${param.boardId }" /> <select
@@ -23,13 +22,14 @@
 			</div>
 		</div>
 	</div>
-	<div style="text-align: start;">
+	<div style="text-align: start; margin-left: 50px;">
 		<button class="btn btn-sm btn-outline">
 			<a href="#">최신순</a>
 		</button>
 		<button class="btn btn-sm btn-outline">
 			<a href="#">인기순</a>
 		</button>
+		<div class="badge badge-outline badge-lg" style="font-size: 15px;">123456개</div>
 	</div>
 	<div class="main">
 		<div>
@@ -73,7 +73,7 @@
 				<li class="cards_item">
 					<div class="card">
 						<div class="card_image">
-							<img src="https://picsum.photos/500/300/?image=10">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFD0xkTgBQXheBZArcoE9utce4JGafpoevzQ&usqp=CAU">
 						</div>
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
@@ -85,7 +85,7 @@
 				<li class="cards_item">
 					<div class="card">
 						<div class="card_image">
-							<img src="https://picsum.photos/500/300/?image=10">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPB46p8nnGrhyVtqHXzFIHrhOuwbPUAEsjgw&usqp=CAU">
 						</div>
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
@@ -97,7 +97,7 @@
 				<li class="cards_item">
 					<div class="card">
 						<div class="card_image">
-							<img src="https://picsum.photos/500/300/?image=10">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKR_wZ6lhsiMxS2C4atk_i-lGT2cOyX5Zo6w&usqp=CAU">
 						</div>
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
@@ -109,7 +109,8 @@
 				<li class="cards_item">
 					<div class="card">
 						<div class="card_image">
-							<img src="https://lh4.googleusercontent.com/proxy/bEt4sI9j3_LOmYx9T9tl5eomarTp4zeVroGX8lxlzwJQHlsSeer5gTDvok8Hh4npDipsLTTpOueOR0BvdW2ARYhue-EdiYGGUFdZhyhlJ5nbF-wXIg">
+							<img
+								src="https://lh4.googleusercontent.com/proxy/bEt4sI9j3_LOmYx9T9tl5eomarTp4zeVroGX8lxlzwJQHlsSeer5gTDvok8Hh4npDipsLTTpOueOR0BvdW2ARYhue-EdiYGGUFdZhyhlJ5nbF-wXIg">
 						</div>
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
@@ -121,7 +122,7 @@
 				<li class="cards_item">
 					<div class="card">
 						<div class="card_image">
-							<img src="https://picsum.photos/500/300/?image=10">
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF_mIcuNWVMJLrO7GPvWd9OksIKU_hhIyUkQ&usqp=CAU">
 						</div>
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
@@ -133,7 +134,8 @@
 				<li class="cards_item">
 					<div class="card">
 						<div class="card_image">
-							<img src="https://picsum.photos/500/300/?image=10">
+							<img
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpf1LOw2kT-wEkQRbosUgJmozkz-iIc65T_KQF57EDffkz-Ts8UVJVXIaKvNYUNZmG6wE&usqp=CAU">
 						</div>
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>

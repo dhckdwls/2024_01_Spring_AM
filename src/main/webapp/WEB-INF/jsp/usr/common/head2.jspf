@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/resource/common2.css" />
 </head>
 <body>
- 	<script src="/resource/common.js" defer="defer"></script> 
+	<script src="/resource/common.js" defer="defer"></script>
 	<!-- 테일윈드 불러오기 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
 
@@ -25,13 +25,12 @@
 
 
 	<div class="container">
-		<div class="header flex items-center">
-			<div class="top_left">
-				<div>
-					<a href="#">사이트 (로고)</a>
-				</div>
+		<div class="header flex justify-between" style="text-align: center;">
+			<div style="width : 13%">칸막이</div>
+			<div style="flex-grow:1;">
+				<a href="#">사이트로고</a>
 			</div>
-			<div class="top_right">
+			<div class="flex" style="width : 13%">
 				<div>
 					<a href="#">LOGIN</a>
 				</div>
@@ -39,20 +38,19 @@
 					<a href="#">JOIN</a>
 				</div>
 			</div>
-
-
 		</div>
 		<section class="content">
-			<nav class="leftside flex items-center" style="min-width : 13%;">
+			<nav class="leftside flex items-center" style="min-width: 13%;">
 				<div class="fixed"
-					style="border-radius: 20px; background-color: #afafaf; width: 13%; text-align: center; top: 20%; height: 30%;">
+					style="border-radius: 20px; background-color: #afafaf; width: 13%; text-align: center; top: 30%; height: 100%;">
 					<ul class="flex items-center justify-center flex-col mt-10">
 						<li><a href="#">여행지추천기</a></li>
 						<li><a href="#">여행지</a></li>
 						<li><a href="#">지도</a></li>
+						<li><a href="#">캘린더</a></li>
 						<li><a href="#">QNA</a></li>
-						
 					</ul>
+
+					<div>날씨 정보</div>
 				</div>
 			</nav>
-			

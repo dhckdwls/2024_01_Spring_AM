@@ -20,26 +20,26 @@ h1 {
 	text-align: center;
 }
 
-/* 사진 */
 img {
-	height: auto;
-	max-width: 100%;
-	vertical-align: middle;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
 }
+
 
 /* 사진아래더보기버튼 */
 .btn1 {
-	color: #ffffff;
-	padding: 0.8rem;
-	font-size: 14px;
-	text-transform: uppercase;
-	border-radius: 4px;
-	font-weight: 400;
-	display: block;
-	width: 100%;
-	cursor: pointer;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	background: transparent;
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
 }
 
 /* 더보기 버튼 호버 했을때 */
@@ -53,11 +53,13 @@ img {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	text-align:center;
 }
 
 .cards_item {
 	display: flex;
 	padding: 1rem;
+  flex-direction : column; /*여기*/
 }
 
 @media ( min-width : 40rem) {
@@ -103,12 +105,20 @@ img {
 	line-height: 1.5;
 	margin-bottom: 1.25rem;
 	font-weight: 400;
+  
+  
+}
+
+.card_image img {
+  width: 100%;
+  height: 200px;
+  
 }
 
 .pageBtn>.btn {
 	display: inline-block;
 }
-
+/* --------------------------화면구성---------------------------------------- */
 /* 화면구성 */
 
 /* 노말라이즈 */
@@ -126,6 +136,7 @@ a {
 /* 커스텀 */
 body {
 	font-size: 2rem;
+	background-color: white;
 }
 
 .container {
@@ -137,41 +148,8 @@ body {
 }
 
 /* 상단 */
-.container>.header {
-	flex-grow: 0;
-}
 
-.header {
-	justify-content: space-between;
-}
 
-.top_left>div {
-	display: block;
-}
-
-.top_left>div>a {
-	display: block;
-	padding: 10px;
-}
-
-.top_left>div:hover>a {
-	background-color: black;
-	color: white;
-}
-
-.top_right>div {
-	display: inline-block;
-}
-
-.top_right>div:hover>a {
-	background-color: black;
-	color: white;
-}
-
-.top_right>div>a {
-	display: block;
-	padding: 10px;
-}
 
 /* 중단 */
 .container>.content {
