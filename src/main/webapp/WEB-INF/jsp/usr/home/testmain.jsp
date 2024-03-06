@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="TEST MAIN"></c:set>
-<%@ include file="../common/head.jspf"%>
+<%@ include file="../common/head2.jspf"%>
 <main>
 
 <!-- 지도를 표시할 div 입니다 -->
@@ -21,4 +21,4 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 
 </main>
 
-<%@ include file="../common/foot.jspf"%>
+<%@ include file="../common/foot2.jspf"%>

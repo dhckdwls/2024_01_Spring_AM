@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
-<%@ include file="../common/head.jspf"%>
+<%@ include file="../common/head2.jspf"%>
 <main style="text-align: center;">
 	<div>
 		<h1 style="font-size: 3rem;">마이페이지</h1>
@@ -47,6 +47,12 @@
 		</div>
 	</div>
 
+	<div>
+		<div>내가 쓴 글</div>
+		<div>즐겨찾기 해놓은 글</div>
+		<div>내가 쓴 댓글</div>
+	</div>
+
 
 
 </main>
@@ -82,4 +88,4 @@ th {
 	background-color: #f2f2f2;
 }
 </style>
-<%@ include file="../common/foot.jspf"%>
+<%@ include file="../common/foot2.jspf"%>

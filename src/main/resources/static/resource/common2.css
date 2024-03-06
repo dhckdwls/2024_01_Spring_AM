@@ -185,6 +185,7 @@ body {
 	flex-basis: 150px;
 	   flex-shrink: 0; 
 	min-width: 10%;
+	position : relative;
 }
 
 /* 중단 메인 */

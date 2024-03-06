@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
-<%@ include file="../common/head.jspf"%>
+<%@ include file="../common/head2.jspf"%>
 <main>
 	<div>
 		<h1 style="font-size: 3rem; background-color: #afafaf;">hello</h1>
@@ -36,4 +36,4 @@ fa-4x : 4배
 
 -->
 
-<%@ include file="../common/foot.jspf"%>
+<%@ include file="../common/foot2.jspf"%>

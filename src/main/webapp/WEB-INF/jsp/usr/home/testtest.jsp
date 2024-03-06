@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
-<%@ include file="../common/head.jspf"%>
+<%@ include file="../common/head2.jspf"%>
 <main class="flex flex-col">
 	<h1 style="font-size:4rem; font-weight:bold;">여행지</h1>
 	<div>
@@ -146,21 +146,21 @@
 	</div>
 	<div class="pageBtn" style="margin-bottom: 20px; text-align: center;">
 		<button>
-			<a href="#" class="btn btn-sm">1</a>
+			<a href="#" class="btn btn-sm btn-outline">1</a>
 		</button>
 		<button>
-			<a href="#" class="btn btn-sm">2</a>
+			<a href="#" class="btn btn-sm btn-outline">2</a>
 		</button>
 		<button>
-			<a href="#" class="btn btn-sm">3</a>
+			<a href="#" class="btn btn-sm btn-outline">3</a>
 		</button>
 		<button>
-			<a href="#" class="btn btn-sm">4</a>
+			<a href="#" class="btn btn-sm btn-outline">4</a>
 		</button>
 		<button>
-			<a href="#" class="btn btn-sm">5</a>
+			<a href="#" class="btn btn-sm btn-outline">5</a>
 		</button>
 	</div>
 </main>
 
-<%@ include file="../common/foot.jspf"%>
+<%@ include file="../common/foot2.jspf"%>

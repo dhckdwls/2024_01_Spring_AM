@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
-<%@ include file="../common/head.jspf"%>
+<%@ include file="../common/head2.jspf"%>
 <style>
 main>div:nth-child(2)>img {
 	width: 600px;
@@ -196,4 +196,4 @@ main>div:nth-child(2)>img {
 		<button class="btn btn-sm btn-outline">5</button>
 	</div>
 </main>
-<%@ include file="../common/foot.jspf"%>
+<%@ include file="../common/foot2.jspf"%>
