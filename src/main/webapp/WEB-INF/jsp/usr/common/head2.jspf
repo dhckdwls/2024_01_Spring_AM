@@ -51,11 +51,11 @@
 				<div class="side-menu"
 					style="border-radius: 20px; background-color: #afafaf; width: 100%; min-width: 100%; height: 100%; text-align: center; top: 0; height: 100%;">
 					<ul class="flex items-center justify-center flex-col mt-10">
-						<li><a href="#">여행지추천기</a></li>
-						<li><a href="#">여행지</a></li>
-						<li><a href="#">지도</a></li>
-						<li><a href="#">캘린더</a></li>
-						<li><a href="#">QNA</a></li>
+						<li><a href="/usr/home/testrandom">여행지추천기</a></li>
+						<li><a href="/usr/home/testtest">여행지</a></li>
+						<li><a href="/usr/home/testmap">지도</a></li>
+						<li><a href="/usr/home/testcalender">캘린더</a></li>
+						<li><a href="/usr/home/testqna">QNA</a></li>
 					</ul>
 
 					<div>날씨 정보</div>

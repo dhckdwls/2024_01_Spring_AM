@@ -73,5 +73,24 @@ public class UsrHomeController {
 		return "/usr/home/testmypage";
 	}
 	
+	@RequestMapping("/usr/home/testmap")
+	public String testmap() {
+
+		return "/usr/home/testmap";
+	}
+	
+	@RequestMapping("/usr/home/testcalender")
+	public String testcalender() {
+
+		return "/usr/home/testcalender";
+	}
+	
+	@RequestMapping("/usr/home/testqna")
+	public String testqna() {
+
+		return "/usr/home/testqna";
+	}
+	
+	
 	
 }
