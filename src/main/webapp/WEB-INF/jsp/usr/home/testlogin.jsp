@@ -10,16 +10,17 @@
 	</div>
 	<div class="line"></div>
 	<div class="login_box" style="display: inline-block;">
-		<form>
+		<form action="../member/doLogin" method="POST">
+		<input type="hidden" name="afterLoginUri" value="/usr/home/testtest" />
 			<div class="group">
-				<input type="text"><span class="highlight"></span><span class="bar"></span> <label>아이디</label>
+				<input type="text" name="loginId"><span class="highlight"></span><span class="bar"></span> <label>아이디</label>
 			</div>
 			<div>없는아이디</div>
 			<div class="group">
-				<input type="email"><span class="highlight"></span><span class="bar"></span> <label>비밀번호</label>
+				<input type="password" name="loginPw"><span class="highlight"></span><span class="bar"></span> <label>비밀번호</label>
 			</div>
 			<div>비밀번호틀림</div>
-			<button type="button" class="button buttonBlue">
+			<button type="submit" class="button buttonBlue">
 				로그인
 				<div class="ripples buttonRipples">
 					<span class="ripplesCircle"></span>
