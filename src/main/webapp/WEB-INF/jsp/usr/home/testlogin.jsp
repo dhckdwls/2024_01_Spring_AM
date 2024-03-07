@@ -8,6 +8,7 @@
 	<div>
 		<h1 style="font-size: 3rem;">로그인</h1>
 	</div>
+	<div class="line"></div>
 	<div class="login_box" style="display: inline-block;">
 		<form>
 			<div class="group">
@@ -45,7 +46,8 @@ form {
 	margin: 4em auto;
 	padding: 3em 2em 2em 2em;
 	/* background: red; */
-	border: 1px solid red;
+	border: 3px solid black;
+	border-radius : 15px;
 	/* box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px; */
 }
 
@@ -178,7 +180,7 @@ to {
 
 /* Button modifiers */
 .buttonBlue {
-	background: #4a89dc;
+	background: black;
 	text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
 }
 

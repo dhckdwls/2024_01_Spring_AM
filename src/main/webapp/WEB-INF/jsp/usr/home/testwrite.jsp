@@ -2,94 +2,104 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
 <%@ include file="../common/head2.jspf"%>
-<%@ include file="../common/toastUiEditorLib.jspf"%>
-<style>
+<main style="text-align:center;">
+	<div>
+		<h1>글쓰기</h1>
+	</div>
+	<div class="line"></div>
+	<div class="write-box" style="text-align:center;">
+		<table>
+			<tr>
+				<th colspan="2" style="border-radius: 10px 10px 0 0;">여행 정보 입력</th>
+			</tr>
+			<tr>
+				<td>여행지:</td>
+				<td><input type="text" placeholder="여행지를 입력하세요"></td>
+			</tr>
+			<tr>
+				<td>여행지 설명:</td>
+				<td><textarea placeholder="여행지에 대한 설명을 입력하세요"></textarea></td>
+			</tr>
+			<tr>
+				<td>여행지 주소:</td>
+				<td><input type="text" placeholder="여행지의 주소를 입력하세요"></td>
+			</tr>
+			<tr>
+				<td>여행지 사진:</td>
+				<td><input type="file"></td>
+			</tr>
+			<tr>
+				<td>태그:</td>
+				<td><input type="text" placeholder="#여행 #기억"></td>
+			</tr>
+			<tr class="buttons">
+				<td colspan="2">
+					<button class="cancel">취소</button>
+					<button>작성하기</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</main>
 
+<style>
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+th, td {
+	padding: 15px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+
+td input, td textarea {
+	width: 100%;
+	padding: 8px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+td input[type="file"] {
+	padding: 12px;
+}
+
+td button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+td button.cancel {
+	background-color: #bbb;
+	margin-right: 10px;
+}
+
+td button:hover {
+	background-color: #45a049;
+}
+
+td button.cancel:hover {
+	background-color: #999;
+}
+
+td.buttons {
+	text-align: center;
+	border-radius: 0 0 10px 10px;
+}
 </style>
 
-<main class="flex justify-center">
-<div>
-	<script type="text/javascript">
-	let ArticleWrite__submitFormDone = false;
-	function ArticleWrite__submit(form) {
-		if (ArticleWrite__submitFormDone) {
-			return;
-		}
-		form.title.value = form.title.value.trim();
-		if (form.title.value == 0) {
-			alert('제목을 입력해주세요');
-			return;
-		}
-		const editor = $(form).find('.toast-ui-editor').data(
-				'data-toast-editor');
-		const markdown = editor.getMarkdown().trim();
-		if (markdown.length == 0) {
-			alert('내용 써라');
-			editor.focus();
-			return;
-		}
-		form.body.value = markdown;
-		ArticleWrite__submitFormDone = true;
-		form.submit();
-	}
-</script>
-
-<section class="mt-8 text-xl px-4">
-	<div class="mx-auto">
-		<form action="../article/doWrite" method="POST" onsubmit="ArticleWrite__submit(this); return false;">
-			<input type="hidden" name="body">
-			<table class="write-box table-box-1" border="1">
-				<tbody>
-					<tr>
-						<th>작성자</th>
-						<td>
-							<div>${rq.loginedMember.nickname }</div>
-						</td>
-					</tr>
-					<tr>
-						<th>게시판</th>
-						<td>
-							<select class="select select-ghost w-full max-w-xs" name="boardId">
-								<!-- 									<option selected="selected" disabled>게시판을 선택해주세요</option> -->
-								<option value="1">공지사항</option>
-								<option value="2">자유</option>
-								<option value="3">QNA</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<th>제목</th>
-						<td>
-							<input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="제목을 입력해주세요" name="title" />
-						</td>
-					</tr>
-					<tr>
-						<th>내용</th>
-						<td>
-							<div class="toast-ui-editor">
-								<script type="text/x-template">
-      </script>
-							</div>
-						</td>
-					</tr>
-
-
-					<tr>
-						<th></th>
-						<td>
-							<button class="btn btn-outline btn-info" type="submit" value="작성">작성</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</form>
-		<div class="btns">
-			<button class="btn btn-outline" class="" type="button" onclick="history.back();">뒤로가기</button>
-		</div>
-	</div>
-</section>
-</div>
-
-</main>
 <%@ include file="../common/foot2.jspf"%>

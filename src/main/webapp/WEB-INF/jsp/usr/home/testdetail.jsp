@@ -3,12 +3,12 @@
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
 <%@ include file="../common/head2.jspf"%>
 <style>
-main>div:nth-child(2)>img {
-	width: 600px;
+.img-box img {
+	width: 500px;
 	height: auto;
 }
-
 </style>
+
 
 <!-- 지도 관련 스크립트 -->
 <script>
@@ -21,17 +21,39 @@ main>div:nth-child(2)>img {
 
 
 <main class="flex flex-col items-center" style="text-align: center;">
-	<div>
-		<h1 style="font-size: 3rem;'">상세보기(여행지이름)</h1>
+	<div style="width: 100%; text-align: center;">
+		<div>
+			<h1 style="font-size: 3rem;'">상세보기(여행지이름)</h1>
+		</div>
+		<div class="line"></div>
+		<div class="flex justify-center items-center img-box" style="height: 350px;">
+			<button>
+				<i class="fa-solid fa-caret-left fa-3x"></i>
+			</button>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcIuucn_n1aDJy_x_ENd1vtaqkC13JwnbuAw&s" alt="" />
+			<button>
+				<i class="fa-solid fa-caret-right fa-3x"></i>
+			</button>
+		</div>
+
+		<div class="line"></div>
+
+		<div>
+			<h1>여행지 정보</h1>
+		</div>
+		<div>
+			<h1>여행지 설명</h1>
+		</div>
+		<div>
+			<h1>여행지 태그</h1>
+		</div>
+		<div>
+			<button class="btn btn-sm btn-outline">수정</button>
+			<button class="btn btn-sm btn-outline">삭제</button>
+		</div>
 	</div>
-	<div>
-		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcIuucn_n1aDJy_x_ENd1vtaqkC13JwnbuAw&s" alt="" />
-	</div>
-	<div>
-		<h1>여행지 정보</h1>
-		<h2>여행지 설명</h2>
-	</div>
-	<div style="width: 90%; height: 100%; border:2px solid black;">
+	<div class="line"></div>
+	<div style="width: 90%; height: 100%; border: 2px solid black;">
 		<!-- 지도를 표시할 div 입니다 -->
 		<div id="map" style="width: 100%; height: 350px;"></div>
 		<p>
@@ -52,14 +74,57 @@ main>div:nth-child(2)>img {
 			var map = new kakao.maps.Map(mapContainer, mapOption);
 		</script>
 	</div>
-	<div>여행지 댓글</div>
-	<div>
-		<button class="btn btn-sm btn-outline">1</button>
-		<button class="btn btn-sm btn-outline">2</button>
-		<button class="btn btn-sm btn-outline">3</button>
-		<button class="btn btn-sm btn-outline">4</button>
-		<button class="btn btn-sm btn-outline">5</button>
+	<div class="line"></div>
+	<div class="reply-box">
+		<table class="styled-table" style="width: 1500px;">
+			<tbody>
+				<tr>
+					<td>Author 1</td>
+					<td style="max-width : 300px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea laudantium neque fugiat debitis qui et tenetur ex eaque molestiae nobis veritatis delectus sed sunt porro praesentium quo velit odio.</td>
+					<td><a href="#" class="edit-btn">Edit</a></td>
+					<td><a href="#" class="delete-btn">Delete</a></td>
+				</tr>
+				<tr>
+					<td>Author 2</td>
+					<td>Content 2</td>
+					<td><a href="#" class="edit-btn">Edit</a></td>
+					<td><a href="#" class="delete-btn">Delete</a></td>
+				</tr>
+				<!-- Add more rows as needed -->
+			</tbody>
+		</table>
+
 	</div>
+	<div>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-backward"></i></a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-caret-left"></i></a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline">1</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline">2</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline">3</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline">4</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline">5</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-caret-right"></i></a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-forward"></i></a>
+		</button>
+	</div>
+	<div class="line"></div>
 	<div>
 		<form action="">
 			<input type="hidden" name="boardId" value="${param.boardId }" /> <select
@@ -74,9 +139,13 @@ main>div:nth-child(2)>img {
 		</form>
 	</div>
 	<div>
-		<h1>여행지 거리순 인기순 최신순</h1>
+		<h1>여행지</h1>
 	</div>
-
+	<div class="line"></div>
+	<div>
+		<button class="btn btn-sm btn-outline">인기순</button>
+		<button class="btn btn-sm btn-outline">최신순</button>
+	</div>
 	<div class="detail_list">
 		<ul class="cards">
 			<li class="cards_item">
@@ -189,11 +258,34 @@ main>div:nth-child(2)>img {
 			</li>
 	</div>
 	<div>
-		<button class="btn btn-sm btn-outline">1</button>
-		<button class="btn btn-sm btn-outline">2</button>
-		<button class="btn btn-sm btn-outline">3</button>
-		<button class="btn btn-sm btn-outline">4</button>
-		<button class="btn btn-sm btn-outline">5</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-backward"></i></a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-caret-left"></i></a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline">1</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline">2</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline">3</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline">4</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline">5</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-caret-right"></i></a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-forward"></i></a>
+		</button>
 	</div>
+	<div class="line"></div>
 </main>
 <%@ include file="../common/foot2.jspf"%>

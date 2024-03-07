@@ -4,6 +4,7 @@
 <%@ include file="../common/head2.jspf"%>
 <main class="flex flex-col">
 	<h1 style="font-size: 4rem; font-weight: bold;">여행지</h1>
+	<div class="line"></div>
 	<div>
 		<div class="mx-auto overflow-x-auto">
 			<div class="mb-4 flex">
@@ -31,6 +32,7 @@
 		</button>
 		<div class="badge badge-outline badge-lg" style="font-size: 15px;">123456개</div>
 	</div>
+	<div class="line"></div>
 	<div class="main">
 		<div>
 			<ul class="cards">
@@ -147,6 +149,13 @@
 		</div>
 	</div>
 	<div class="pageBtn" style="margin-bottom: 20px; text-align: center;">
+	 <div class="line"></div>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-backward"></i></a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-caret-left"></i></a>
+		</button>
 		<button>
 			<a href="#" class="btn btn-sm btn-outline">1</a>
 		</button>
@@ -161,6 +170,12 @@
 		</button>
 		<button>
 			<a href="#" class="btn btn-sm btn-outline">5</a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-caret-right"></i></a>
+		</button>
+		<button>
+			<a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-forward"></i></a>
 		</button>
 	</div>
 </main>

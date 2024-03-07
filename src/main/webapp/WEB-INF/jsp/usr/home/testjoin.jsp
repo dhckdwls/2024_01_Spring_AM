@@ -7,7 +7,8 @@
 	<div>
 		<h1 style="font-size: 3rem;">회원가입</h1>
 	</div>
-	<div class="login_box" style="display: inline-block;">
+	<div class="line"></div>
+	<div class="login_box" style="display: inline-block; border:2px solid black;">
 		<form>
 			<div class="group">
 				<input type="text"><span class="highlight"></span><span class="bar"></span> <label>아이디</label>
@@ -62,6 +63,7 @@
 			</button>
 		</form>
 	</div>
+	<div class="line"></div>
 
 </main>
 
@@ -77,10 +79,8 @@
  */
 form {
 	width: 380px;
-	margin: 4em auto;
 	padding: 3em 2em 2em 2em;
 	/* background: red; */
-	border: 1px solid red;
 	/* box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px; */
 }
 

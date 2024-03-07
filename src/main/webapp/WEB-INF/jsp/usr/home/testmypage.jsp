@@ -7,9 +7,10 @@
 	<div>
 		<h1 style="font-size: 3rem;">마이페이지</h1>
 	</div>
+	<div class="line"></div>
 	<div class="container1 flex flex-col">
 		<div class="card" style="width: 40%;">
-			<h2 style="text-align: center; padding: 20px; margin: 0; background-color: red; color: white;">User Information</h2>
+			<h2 style="text-align: center; padding: 20px; margin: 0; background-color: skyblue; color: black;">회원정보</h2>
 			<table>
 				<tr>
 					<th>이름 :</th>
@@ -47,14 +48,22 @@
 		</div>
 	</div>
 
-	<div>
-		<div>내가 쓴 글</div>
-		<div>즐겨찾기 해놓은 글</div>
-		<div>내가 쓴 댓글</div>
-	</div>
+	<div class="line"></div>
+	
+	<div>내가 쓴 글</div>
+	
+	<div class="line"></div>
+	
+	<div>즐겨찾기 해놓은 글</div>
+	
+	<div class="line"></div>
+	
+	<div>내가 쓴 댓글</div>
 
 
 
+
+	<div class="line"></div>
 </main>
 
 <style>
