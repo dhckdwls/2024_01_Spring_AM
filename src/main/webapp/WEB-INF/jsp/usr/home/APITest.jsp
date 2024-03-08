@@ -27,6 +27,25 @@
 	getData2();
 	
 </script>
+<script>
+async function getData() {
+    const API_KEY = 'ixQo%2FUislf4YkHMgIBaDkwtFr%2FjmxRZLI55pNfsWntbXQewj3hrI50T6IoARyuZNWhk10ra5m39wMU57zRKeIw%3D%3D';
+    const url = 'https://apis.data.go.kr/6300000/openapi2022/shard/getshard?serviceKey=' + API_KEY + '&pageNo=1&numOfRows=5';
+
+    try {
+        const response = await fetch(url);
+        const htmlText = await response.text();
+
+        // Now you can work with the htmlText
+        console.log("htmlText", htmlText);
+    } catch (error) {
+        console.error("Error fetching or parsing HTML:", error);
+    }
+}
+
+getData();
+</script>
+
 
 <script>
 const API_KEY = '7gBxrsj7WSHvOZjYdEQXGXuT9pq9L8NMGDZ9hzG7VnyftpPH7IIKkWxq2HkS94X9AsKLEzXCkaOZeH94lv28Bg%3D%3D';
@@ -34,9 +53,9 @@ var xhr = new XMLHttpRequest();
 var url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst'; /*URL*/
 var queryParams = '?' + encodeURIComponent('serviceKey') + '='+ API_KEY; /*Service Key*/
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
-queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1'); /**/
+queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1000'); /**/
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('XML'); /**/
-queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent('20240306'); /**/
+queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent('20240308'); /**/
 queryParams += '&' + encodeURIComponent('base_time') + '=' + encodeURIComponent('0500'); /**/
 queryParams += '&' + encodeURIComponent('nx') + '=' + encodeURIComponent('55'); /**/
 queryParams += '&' + encodeURIComponent('ny') + '=' + encodeURIComponent('127'); /**/

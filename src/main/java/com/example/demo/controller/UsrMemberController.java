@@ -33,7 +33,8 @@ public class UsrMemberController {
 
 		rq.logout();
 
-		return Ut.jsReplace("S-1", "로그아웃 되었습니다", "/");
+		return Ut.jsReplace("S-1", "로그아웃 되었습니다", "/usr/home/testtest");
+//		return Ut.jsReplace("S-1", "로그아웃 되었습니다", "/"); 기존
 	}
 
 	@RequestMapping("/usr/member/login")
@@ -127,7 +128,8 @@ public class UsrMemberController {
 
 		Member member = memberService.getMember(joinRd.getData1());
 
-		return Ut.jsReplace(joinRd.getResultCode(), joinRd.getMsg(), "../member/login");
+		return Ut.jsReplace(joinRd.getResultCode(), joinRd.getMsg(), "../home/testlogin");
+//		return Ut.jsReplace(joinRd.getResultCode(), joinRd.getMsg(), "../member/login");
 	}
 
 	@RequestMapping("/usr/member/myPage")

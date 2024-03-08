@@ -8,54 +8,54 @@
 		<h1 style="font-size: 3rem;">회원가입</h1>
 	</div>
 	<div class="line"></div>
-	<div class="login_box" style="display: inline-block; border:2px solid black;">
-		<form>
+	<div class="login_box" style="display: inline-block; border:2px solid black; border-radius:30px;">
+		<form action="/usr/member/doJoin" method="POST">
 			<div class="group">
-				<input type="text"><span class="highlight"></span><span class="bar"></span> <label>아이디</label>
+				<input type="text" name="loginId"><span class="highlight" autocomplete="off"></span><span class="bar"></span> <label>아이디</label>
 				<div>없는아이디</div>
 			</div>
 			
 			<div class="group">
-				<input type="email"><span class="highlight"></span><span class="bar"></span> <label>비밀번호</label>
+				<input type="text" name="loginPw"><span class="highlight" autocomplete="off"></span><span class="bar"></span> <label>비밀번호</label>
 				<div>비밀번호틀림</div>
 			</div>
 			
 			<div class="group">
-				<input type="email"><span class="highlight"></span><span class="bar"></span> <label>이름</label>
+				<input type="text" name="name"><span class="highlight" autocomplete="off"></span><span class="bar"></span> <label>이름</label>
+				<div></div>
+			</div>
+			
+			<!-- <div class="group">
+				<input type="text" name="age"><span class="highlight" autocomplete="off"></span><span class="bar"></span> <label>나이</label>
 				<div></div>
 			</div>
 			
 			<div class="group">
-				<input type="email"><span class="highlight"></span><span class="bar"></span> <label>나이</label>
+				<input type="text" name="gender"><span class="highlight" autocomplete="off"></span><span class="bar"></span> <label>성별</label>
+				<div></div>
+			</div> -->
+			
+			<div class="group">
+				<input type="text" name="nickname"><span class="highlight" autocomplete="off"></span><span class="bar"></span> <label>닉네임</label>
 				<div></div>
 			</div>
 			
 			<div class="group">
-				<input type="email"><span class="highlight"></span><span class="bar"></span> <label>성별</label>
+				<input type="text" name="email"><span class="highlight" autocomplete="off"></span><span class="bar"></span> <label>이메일</label>
 				<div></div>
 			</div>
 			
 			<div class="group">
-				<input type="email"><span class="highlight"></span><span class="bar"></span> <label>닉네임</label>
+				<input type="text" name="cellphoneNum"><span class="highlight" autocomplete="off"></span><span class="bar"></span> <label>전화번호</label>
 				<div></div>
 			</div>
 			
-			<div class="group">
-				<input type="email"><span class="highlight"></span><span class="bar"></span> <label>이메일</label>
+			<!-- <div class="group">
+				<input type="text" name="address" autocomplete="off"><span class="highlight"></span><span class="bar"></span> <label>주소</label>
 				<div></div>
-			</div>
+			</div> -->
 			
-			<div class="group">
-				<input type="email"><span class="highlight"></span><span class="bar"></span> <label>전화번호</label>
-				<div></div>
-			</div>
-			
-			<div class="group">
-				<input type="email"><span class="highlight"></span><span class="bar"></span> <label>주소</label>
-				<div></div>
-			</div>
-			
-			<button type="button" class="button buttonBlue">
+			<button type="submit" class="button buttonBlue">
 				회원가입
 				<div class="ripples buttonRipples">
 					<span class="ripplesCircle"></span>

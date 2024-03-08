@@ -23,11 +23,11 @@
 
 	<div class="container">
 		<div class="header flex justify-between" style="text-align: center;">
-			<div class="menu-button" style="width: 13%">메뉴 보기</div>
+			<div class="menu-button" style="width: 15%">메뉴 보기</div>
 			<div class="header-center" style="flex-grow: 1;">
 				<a href="/usr/home/testtest">사이트로고</a>
 			</div>
-			<div class="flex header-right justify-center" style="width: 13%;">
+			<div class="flex header-right justify-around" style="width: 15%;">
 				<c:if test="${!rq.isLogined() }">
 					<div>
 						<a href="/usr/home/testlogin">LOGIN</a>
@@ -38,6 +38,9 @@
 				</c:if>
 				<c:if test="${rq.isLogined() }">
 					<div>
+					<a href="/usr/home/testwrite">WRITE</a>
+					</div>
+					<div>
 						<a href="/usr/home/testmypage">MYPAGE</a>
 					</div>
 					<div>
@@ -47,7 +50,7 @@
 			</div>
 		</div>
 		<section class="content">
-			<nav class="leftside flex items-center" style="min-width: 13%;">
+			<nav class="leftside flex items-center" style="min-width: 15%;">
 				<div class="side-menu"
 					style="border-radius: 20px; background-color: #afafaf; width: 100%; min-width: 100%; height: 100%; text-align: center; top: 0; height: 100%;">
 					<ul class="flex items-center justify-center flex-col mt-10">

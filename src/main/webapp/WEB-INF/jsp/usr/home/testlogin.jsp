@@ -11,22 +11,22 @@
 	<div class="line"></div>
 	<div class="login_box" style="display: inline-block;">
 		<form action="../member/doLogin" method="POST">
-		<input type="hidden" name="afterLoginUri" value="/usr/home/testtest" />
+			<input type="hidden" name="afterLoginUri" value="/usr/home/testtest" />
 			<div class="group">
 				<input type="text" name="loginId"><span class="highlight"></span><span class="bar"></span> <label>아이디</label>
 			</div>
-			<div>없는아이디</div>
 			<div class="group">
 				<input type="password" name="loginPw"><span class="highlight"></span><span class="bar"></span> <label>비밀번호</label>
 			</div>
-			<div>비밀번호틀림</div>
 			<button type="submit" class="button buttonBlue">
 				로그인
 				<div class="ripples buttonRipples">
 					<span class="ripplesCircle"></span>
 				</div>
 			</button>
-			<div>아이디찾기 비밀번호찾기 회원가입</div>
+			<div class="select-box" style="font-size:1rem;">
+				<a href="">아이디찾기</a> <a href="">비밀번호찾기</a> <a href="/usr/home/testjoin">회원가입</a>
+			</div>
 		</form>
 	</div>
 
@@ -42,19 +42,24 @@
    -webkit-font-smoothing: antialiased;
 }
  */
+ 
+ .select-box > a:hover{
+ 	text-decoration: underline;
+ }
+ 
 form {
 	width: 380px;
 	margin: 4em auto;
 	padding: 3em 2em 2em 2em;
 	/* background: red; */
 	border: 3px solid black;
-	border-radius : 15px;
+	border-radius: 15px;
 	/* box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px; */
 }
 
 .group {
 	position: relative;
-	/* margin-bottom: 30px; */ /* 임시처리  */
+	margin-bottom: 30px;
 }
 
 input {
@@ -76,7 +81,7 @@ input:focus {
 
 /* Label */
 label {
-	color: #999;  /* 아이디,비밀번호 글자색 */
+	color: #999; /* 아이디,비밀번호 글자색 */
 	font-size: 18px;
 	font-weight: normal;
 	position: absolute;
@@ -223,24 +228,56 @@ keyframes ripples { 0% {
 	opacity: 0;
 }
 25
+
+
 %
 {
 opacity
+
+
 :
-1;
+
+
+1
+;
+
+
 }
 100
+
+
 %
 {
 width
+
+
 :
-200%;
+
+
+200
+%;
+
+
 padding-bottom
+
+
 :
-200%;
+
+
+200
+%;
+
+
 opacity
+
+
 :
-0;
+
+
+0
+;
+
+
 }
 }
 </style>

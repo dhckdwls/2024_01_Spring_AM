@@ -16,6 +16,7 @@
 						<option value="title">제목</option>
 						<option value="body">내용</option>
 						<option value="title,body">제목+내용</option>
+						<option value="tag">#태그</option>
 					</select> <input value="${param.searchKeyword }" name="searchKeyword" type="text" placeholder="searchKeyword?"
 						class="input-sm input input-bordered w-48 max-w-xs" />
 					<button class="btn btn-sm btn-outline" type="submit">검색</button>
@@ -44,7 +45,7 @@
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
 							<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-							<button class="btn1 card_btn">더보기</button>
+							<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 						</div>
 					</div>
 				</li>
@@ -56,7 +57,7 @@
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
 							<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-							<button class="btn1 card_btn">더보기</button>
+							<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 						</div>
 					</div>
 				</li>
@@ -68,7 +69,7 @@
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
 							<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-							<button class="btn1 card_btn">더보기</button>
+							<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 						</div>
 					</div>
 				</li>
@@ -80,7 +81,7 @@
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
 							<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-							<button class="btn1 card_btn">더보기</button>
+							<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 						</div>
 					</div>
 				</li>
@@ -92,7 +93,7 @@
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
 							<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-							<button class="btn1 card_btn">더보기</button>
+							<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 						</div>
 					</div>
 				</li>
@@ -104,7 +105,7 @@
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
 							<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-							<button class="btn1 card_btn">더보기</button>
+							<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 						</div>
 					</div>
 				</li>
@@ -117,7 +118,7 @@
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
 							<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-							<button class="btn1 card_btn">더보기</button>
+							<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 						</div>
 					</div>
 				</li>
@@ -129,7 +130,7 @@
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
 							<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-							<button class="btn1 card_btn">더보기</button>
+							<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 						</div>
 					</div>
 				</li>
@@ -142,7 +143,7 @@
 						<div class="card_content">
 							<h2 class="card_title">서울</h2>
 							<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-							<button class="btn1 card_btn">더보기</button>
+							<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 						</div>
 					</div>
 				</li>

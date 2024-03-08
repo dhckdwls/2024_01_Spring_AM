@@ -12,6 +12,7 @@
 
 <!-- 지도 관련 스크립트 -->
 <script>
+	
 	//버튼 클릭에 따라 지도 확대, 축소 기능을 막거나 풀고 싶은 경우에는 map.setZoomable 함수를 사용합니다
 	function setZoomable(zoomable) {
 		// 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
@@ -56,11 +57,6 @@
 	<div style="width: 90%; height: 100%; border: 2px solid black;">
 		<!-- 지도를 표시할 div 입니다 -->
 		<div id="map" style="width: 100%; height: 350px;"></div>
-		<p>
-			<button onclick="setZoomable(false)" class="btn btn-sm btn-outline">지도 확대/축소 끄기</button>
-			<button onclick="setZoomable(true)" class="btn btn-sm btn-outline">지도 확대/축소 켜기</button>
-		</p>
-
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4e61cb52e3e91adc0353005a87c20fd2"></script>
 		<script>
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -73,10 +69,15 @@
 			// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
 			var map = new kakao.maps.Map(mapContainer, mapOption);
 		</script>
+
 	</div>
 	<div class="line"></div>
+	<p>
+			<button onclick="setZoomable(false)" class="btn btn-sm btn-outline">지도 확대/축소 끄기</button>
+			<button onclick="setZoomable(true)" class="btn btn-sm btn-outline">지도 확대/축소 켜기</button>
+		</p>
 	<div class="reply-box">
-		<table class="styled-table" style="width: 1500px;">
+		<table class="styled-table" style="width: 1300px;">
 			<tbody>
 				<tr>
 					<td>Author 1</td>
@@ -156,7 +157,7 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn">더보기</button>
+						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 					</div>
 				</div>
 			</li>
@@ -168,7 +169,7 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn">더보기</button>
+						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 					</div>
 				</div>
 			</li>
@@ -180,7 +181,7 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn">더보기</button>
+						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 					</div>
 				</div>
 			</li>
@@ -192,7 +193,7 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn">더보기</button>
+						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 					</div>
 				</div>
 			</li>
@@ -204,7 +205,7 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn">더보기</button>
+						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 					</div>
 				</div>
 			</li>
@@ -216,7 +217,7 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn">더보기</button>
+						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 					</div>
 				</div>
 			</li>
@@ -228,7 +229,7 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn">더보기</button>
+						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 					</div>
 				</div>
 			</li>
@@ -240,7 +241,7 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn">더보기</button>
+						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 					</div>
 				</div>
 			</li>
@@ -252,7 +253,7 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn">더보기</button>
+						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
 					</div>
 				</div>
 			</li>
