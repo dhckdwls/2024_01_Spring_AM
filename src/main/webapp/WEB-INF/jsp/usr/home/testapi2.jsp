@@ -3,14 +3,16 @@
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
 <%@ include file="../common/head2.jspf"%>
 <main>
+<div>서울 1 인천 2 대전 3 대구 4 광주 5 부산 6 울산 7 세종 8 경기 31 강원 32 충북 33 충나 34 경북 35 경남 36 전북 37 전남 38 제주 39</div>
+<div>관광타입(12:관광지, 14:문화시설, 15:축제공연행사, 25:여행코스, 28:레포츠, 32:숙박, 38:쇼핑, 39:음식점) ID</div>
 
 <script>
     const apiUrl = 'http://apis.data.go.kr/B551011/KorService1/areaBasedList1';
     const serviceKey = '7gBxrsj7WSHvOZjYdEQXGXuT9pq9L8NMGDZ9hzG7VnyftpPH7IIKkWxq2HkS94X9AsKLEzXCkaOZeH94lv28Bg%3D%3D'; // 귀하의 실제 인증 키로 대체하세요
     const pageNo = 1;
     const numOfRows = 100;
-    const arrange = 'A';
-    const areaCode = 32; // 필요에 따라 변경하세요
+    const arrange = 'A';//(A=제목순, C=수정일순, D=생성일순)
+    const areaCode = ''; // 필요에 따라 변경하세요
     const contentTypeId = 12; // 관광 명소에 해당하는 contentTypeId
     const mobileApp = 'AppTest';
     const mobileOS = 'ETC';
@@ -33,8 +35,15 @@
           const addr1 = items[i].getElementsByTagName('addr1')[0].textContent;
           const addr2 = items[i].getElementsByTagName('addr2')[0].textContent;
           const firstimage = items[i].getElementsByTagName('firstimage')[0].textContent;
-          arr1[i] = firstimage;
           const firstimage2 = items[i].getElementsByTagName('firstimage2')[0].textContent;
+          const mapx = items[i].getElementsByTagName('mapx')[0].textContent;
+          const mapy = items[i].getElementsByTagName('mapy')[0].textContent;
+          const tel = items[i].getElementsByTagName('tel')[0].textContent;
+          const zipcode = items[i].getElementsByTagName('zipcode')[0].textContent;
+          const mlevel = items[i].getElementsByTagName('mlevel')[0].textContent;
+          
+          
+          
           
          
 
@@ -43,10 +52,19 @@
           console.log(addr1);
           console.log(addr2);
           console.log(firstimage);
+          console.log(firstimage2);
+          console.log(mapx);
+          console.log(mapy);
+          console.log(tel);
+          console.log(zipcode);
+          console.log(mlevel);
+   
+          
           
           
           
         }
+        console.log(items);
 
         console.log(xmlDoc);
         
@@ -55,6 +73,11 @@
         console.error('에러 발생:', error);
       });
   </script>
+  
+  <form action="/usr/home/testWrite" method="POST">
+  	<input type="text" name="items" value="${items }"/>
+  	<<input class="btn btn-sm btn-outline" type="submit" value="제출" /></inut>
+  </form>
   
 
 

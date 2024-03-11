@@ -2,6 +2,9 @@ package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.example.demo.vo.TripArticle;
 
 @Controller
 public class UsrHomeController {
@@ -103,9 +106,14 @@ public class UsrHomeController {
 		return "/usr/home/testweather";
 	}
 	
+	@RequestMapping("/usr/home/CSV")
+	public String CSV() {
+
+		return "/usr/home/CSV";
+	}
 	
 	
-	
+
 	
 	
 	

@@ -13,6 +13,7 @@
 <!-- 지도 관련 스크립트 -->
 <script>
 	
+
 	//버튼 클릭에 따라 지도 확대, 축소 기능을 막거나 풀고 싶은 경우에는 map.setZoomable 함수를 사용합니다
 	function setZoomable(zoomable) {
 		// 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
@@ -68,20 +69,34 @@
 
 			// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
 			var map = new kakao.maps.Map(mapContainer, mapOption);
+			
+			//마커가 표시될 위치입니다 
+			var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+
+			// 마커를 생성합니다
+			var marker = new kakao.maps.Marker({
+				position : markerPosition
+			});
+
+			// 마커가 지도 위에 표시되도록 설정합니다
+			marker.setMap(map);
+			
 		</script>
 
 	</div>
 	<div class="line"></div>
 	<p>
-			<button onclick="setZoomable(false)" class="btn btn-sm btn-outline">지도 확대/축소 끄기</button>
-			<button onclick="setZoomable(true)" class="btn btn-sm btn-outline">지도 확대/축소 켜기</button>
-		</p>
+		<button onclick="setZoomable(false)" class="btn btn-sm btn-outline">지도 확대/축소 끄기</button>
+		<button onclick="setZoomable(true)" class="btn btn-sm btn-outline">지도 확대/축소 켜기</button>
+	</p>
 	<div class="reply-box">
 		<table class="styled-table" style="width: 1300px;">
 			<tbody>
 				<tr>
 					<td>Author 1</td>
-					<td style="max-width : 300px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea laudantium neque fugiat debitis qui et tenetur ex eaque molestiae nobis veritatis delectus sed sunt porro praesentium quo velit odio.</td>
+					<td style="max-width: 300px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea laudantium
+						neque fugiat debitis qui et tenetur ex eaque molestiae nobis veritatis delectus sed sunt porro praesentium quo
+						velit odio.</td>
 					<td><a href="#" class="edit-btn">Edit</a></td>
 					<td><a href="#" class="delete-btn">Delete</a></td>
 				</tr>
@@ -157,7 +172,9 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
+						<button class="btn1 card_btn">
+							<a href="/usr/home/testdetail">더보기</a>
+						</button>
 					</div>
 				</div>
 			</li>
@@ -169,7 +186,9 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
+						<button class="btn1 card_btn">
+							<a href="/usr/home/testdetail">더보기</a>
+						</button>
 					</div>
 				</div>
 			</li>
@@ -181,7 +200,9 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
+						<button class="btn1 card_btn">
+							<a href="/usr/home/testdetail">더보기</a>
+						</button>
 					</div>
 				</div>
 			</li>
@@ -193,7 +214,9 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
+						<button class="btn1 card_btn">
+							<a href="/usr/home/testdetail">더보기</a>
+						</button>
 					</div>
 				</div>
 			</li>
@@ -205,7 +228,9 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
+						<button class="btn1 card_btn">
+							<a href="/usr/home/testdetail">더보기</a>
+						</button>
 					</div>
 				</div>
 			</li>
@@ -217,7 +242,9 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
+						<button class="btn1 card_btn">
+							<a href="/usr/home/testdetail">더보기</a>
+						</button>
 					</div>
 				</div>
 			</li>
@@ -229,7 +256,9 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
+						<button class="btn1 card_btn">
+							<a href="/usr/home/testdetail">더보기</a>
+						</button>
 					</div>
 				</div>
 			</li>
@@ -241,7 +270,9 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
+						<button class="btn1 card_btn">
+							<a href="/usr/home/testdetail">더보기</a>
+						</button>
 					</div>
 				</div>
 			</li>
@@ -253,7 +284,9 @@
 					<div class="card_content">
 						<h2 class="card_title">서울</h2>
 						<p class="card_text">간단한 설명이나 태그가 들어갈자리</p>
-						<button class="btn1 card_btn"><a href="/usr/home/testdetail">더보기</a></button>
+						<button class="btn1 card_btn">
+							<a href="/usr/home/testdetail">더보기</a>
+						</button>
 					</div>
 				</div>
 			</li>
