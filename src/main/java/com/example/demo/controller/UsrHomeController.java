@@ -22,6 +22,37 @@ public class UsrHomeController {
 	}
 	
 //	 테스트용
+	@RequestMapping("/usr/home/APITest")
+	public String APITest() {
+
+		return "/usr/home/APITest";
+	}
+	
+	@RequestMapping("/usr/home/APITest2")
+	public String APITes2() {
+
+		return "/usr/home/APITest2";
+	}
+	
+	@RequestMapping("/usr/home/APITest3")
+	public String APITest3() {
+
+		return "/usr/home/APITest3";
+	}
+	
+	@RequestMapping("/usr/home/APITest4")
+	public String APITest4() {
+
+		return "/usr/home/APITest4";
+	}
+	
+	@RequestMapping("/usr/home/APITest5")
+	public String APITest5() {
+
+		return "/usr/home/APITest5";
+	}
+	
+	
 	@RequestMapping("/usr/home/testmain")
 	public String testmain() {
 

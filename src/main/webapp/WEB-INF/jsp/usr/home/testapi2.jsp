@@ -5,12 +5,14 @@
 <main>
 <div>서울 1 인천 2 대전 3 대구 4 광주 5 부산 6 울산 7 세종 8 경기 31 강원 32 충북 33 충나 34 경북 35 경남 36 전북 37 전남 38 제주 39</div>
 <div>관광타입(12:관광지, 14:문화시설, 15:축제공연행사, 25:여행코스, 28:레포츠, 32:숙박, 38:쇼핑, 39:음식점) ID</div>
-
+<div>서울 12 (13040)
+인천2
+</div>
 <script>
     const apiUrl = 'http://apis.data.go.kr/B551011/KorService1/areaBasedList1';
     const serviceKey = '7gBxrsj7WSHvOZjYdEQXGXuT9pq9L8NMGDZ9hzG7VnyftpPH7IIKkWxq2HkS94X9AsKLEzXCkaOZeH94lv28Bg%3D%3D'; // 귀하의 실제 인증 키로 대체하세요
     const pageNo = 1;
-    const numOfRows = 100;
+    const numOfRows = 5;
     const arrange = 'A';//(A=제목순, C=수정일순, D=생성일순)
     const areaCode = ''; // 필요에 따라 변경하세요
     const contentTypeId = 12; // 관광 명소에 해당하는 contentTypeId
@@ -74,11 +76,7 @@
       });
   </script>
   
-  <form action="/usr/home/testWrite" method="POST">
-  	<input type="text" name="items" value="${items }"/>
-  	<<input class="btn btn-sm btn-outline" type="submit" value="제출" /></inut>
-  </form>
-  
+
 
 
 
